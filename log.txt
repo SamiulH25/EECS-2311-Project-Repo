@@ -4,9 +4,44 @@ Week 1 (Mon: Jan 6)
 - approx. 20 Minutes
 - Communications channel was established
     - Discord groupchat
-
+    - 4 of 5 members added
 
 
 Week 2 (Mon: Jan 13)
-- 
-- 
+- In-Lab meeting minutes: approx. 45
+- Ideas for project were brainstormed
+    - GymBuddy, Price Tracker, Animal Shelter, Expenses Tracker
+- In-Class meeting minutes: approx. 30
+- Best idea was voted on using preferential voting system.
+    - results: GymBuddy, Price Tracker, Expenses Tracker, Animal Shelter
+- Tuesday: fifth member added to Discord.
+    - 5 of 5 members added
+- Thursday: Project Idea submitted for approval.
+
+
+Week 3 (Mon: Jan 20)
+- 1 member dropped the course.
+- Project Idea solidified.
+- In-Lab meeting minutes: approx. 10
+- Tuesday: Teams were restructured.
+    - 1 member was removed, 2 added.
+- Wednesday: Both new members were added to the Discord.
+
+
+Week 4 (Mon: Jan 27)
+- After the labtest the whole team was collected and introduced to each other.
+- Post-Lab meeting minutes: approx. 25
+- Minor Friday meeting was scheduled
+- Friday: ITR0 Planning document progress was commenced.
+- GitHub repository was established.
+
+
+Week 5 (Mon: Feb 3)
+- In-Lab meeting minutes: approx. 25
+- Issues with team attendance caused the meetings this week to be very minor.
+
+
+Week 6 (Mon: Feb 10)
+- approx. 1.2 hours
+- Work on Major User stories was distributed to team members
+- Minor Friday meeting was scheduled
