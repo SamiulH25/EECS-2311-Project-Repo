@@ -1,0 +1,27 @@
+[
+  {
+    "company" : "Walmart",
+    "prices" : [{"Apples" : 1.35, "Banana": 0.75, "Pears": 1.10, "Uncooked Whole Chicken": 5.50, "Orange Juice" : 3.20}]
+
+  },
+  {
+    "company" : "NoFrills",
+    "prices" : [{"Apples" : 1.45, "Banana": 0.89, "Pears": 1.20, "Uncooked Whole Chicken": 6.00, "Orange Juice" : 3.00}]
+
+  },
+  {
+    "company" : "Freshco",
+    "prices" : [{"Apples" : 1.25, "Banana": 0.69, "Pears": 1.00, "Uncooked Whole Chicken": 5.00, "Orange Juice" : 2.80}]
+
+  },
+  {
+    "company" : "Metro",
+    "prices" : [{"Apples" : 1.95, "Banana": 1.05, "Pears": 2.01, "Uncooked Whole Chicken": 7.50, "Orange Juice" : 3.80}]
+
+  },
+  {
+    "company" : "Sobeys",
+    "prices" : [{"Apples" : 1.75, "Banana": 0.95, "Pears": 1.99, "Uncooked Whole Chicken": 6.50, "Orange Juice" : 3.70}]
+
+  }
+]
