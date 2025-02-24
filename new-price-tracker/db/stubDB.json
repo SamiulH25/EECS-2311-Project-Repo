@@ -1,0 +1,142 @@
+{
+    "stores": [
+        {
+            "name": "Walmart",
+            "location": "York Lanes",
+            "items": [
+                {
+                    "name": "Apple",
+                    "price": 1.99
+                },
+                {
+                    "name": "Eggs",
+                    "price": 3.49
+                },
+                {
+                    "name": "Milk",
+                    "price": 5.69
+                },
+                {
+                    "name": "Brioche Bread",
+                    "price": 4.99
+                },
+                {
+                    "name": "Cat Food",
+                    "price": 13.99
+                }
+            ]
+
+        },
+
+        {
+            "name": "NoFrills",
+            "location": "Downtown",
+            "items": [
+                {
+                    "name": "Apple",
+                    "price": 2.99
+                },
+                {
+                    "name": "Eggs",
+                    "price": 3.49
+                },
+                {
+                    "name": "Milk",
+                    "price": 4.69
+                },
+                {
+                    "name": "Brioche Bread",
+                    "price": 5.99
+                },
+                {
+                    "name": "Dog Food",
+                    "price": 13.99
+                }
+            ]
+
+        },
+
+        {
+            "name": "Sobeys",
+            "location": "York Lanes",
+            "items": [
+                {
+                    "name": "Apple",
+                    "price": 0.99
+                },
+                {
+                    "name": "Eggs",
+                    "price": 4.49
+                },
+                {
+                    "name": "Milk",
+                    "price": 7.69
+                },
+                {
+                    "name": "Rye Bread",
+                    "price": 3.99
+                },
+                {
+                    "name": "Cat Food",
+                    "price": 12.99
+                }
+            ]
+        },
+
+        {
+            "name": "Loblaws",
+            "location": "Mississauga",
+            "items": [
+                {
+                    "name": "Apple",
+                    "price": 2.99
+                },
+                {
+                    "name": "Eggs",
+                    "price": 4.49
+                },
+                {
+                    "name": "Milk",
+                    "price": 4.69
+                },
+                {
+                    "name": "Rye Bread",
+                    "price": 4.99
+                },
+                {
+                    "name": "Dog Food",
+                    "price": 12.99
+                }
+            ]
+
+        },
+
+        {
+            "name": "Walmart",
+            "location": "Downtown",
+            "items": [
+                {
+                    "name": "Apple",
+                    "price": 1.99
+                },
+                {
+                    "name": "Eggs",
+                    "price": 3.49
+                },
+                {
+                    "name": "Milk",
+                    "price": 5.69
+                },
+                {
+                    "name": "Rye Bread",
+                    "price": 4.99
+                },
+                {
+                    "name": "Dog Food",
+                    "price": 13.99
+                }
+            ]
+
+        }
+    ]
+}
