@@ -45,3 +45,16 @@ Week 6 (Mon: Feb 10)
 - approx. 1.2 hours
 - Work on Major User stories was distributed to team members
 - Minor Friday meeting was scheduled
+
+
+Week 7 (Mon: Feb 17)
+- approx. 3 hours
+- The team members worked on their assigned Major User stories tasks
+     - Ashdika's task was on user authentication 
+- Friday meeting was scheduled for the team members to give an update on the progress of their tasks and complete their pending tasks.
+
+
+Week 8 (Mon: Feb 24)
+- In-Lab meeting minutes: approx. 45 mins
+- In-class meeting minutes: approx. 30 mins
+- Reorganized the GitHub repository before committing and pushing the files based on their assigned user stories' tasks.
