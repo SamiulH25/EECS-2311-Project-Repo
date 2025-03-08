@@ -62,19 +62,22 @@ model Store {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
-  location  String
+
+  name     String
+  location String
 
   items Item[]
+
+  @@unique([id, name, location])
 }
 
 model List {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  name      String
 
-  items Item[]
+  name  String
+  items Item[] @relation("ItemList")
 
   user   User @relation(fields: [userId], references: [id])
   userId Int
@@ -84,15 +87,18 @@ model Item {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
   name      String
-  price     Float    @default(0.00)
-  upvotes   Int      @default(0)
-  downvotes Int      @default(0)
+  price     Float  @default(0.00)
+  upvotes   Int    @default(0)
+  downvotes Int    @default(0)
 
-  store   Store @relation(fields: [storeId], references: [id])
-  storeId Int
+  store         Store  @relation(fields: [storeId, storeName, storeLocation], references: [id, name, location])
+  storeId       Int
+  storeName     String
+  storeLocation String
 
-  list List[]
+  list List[] @relation("ItemList")
 }
 
 // NOTE: It's highly recommended to use an enum for the token type
