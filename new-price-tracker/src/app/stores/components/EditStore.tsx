@@ -1,11 +1,11 @@
-"use client";
-import { Suspense } from "react";
-import updateStore from "../mutations/updateStore";
-import getStore from "../queries/getStore";
-import { UpdateStoreSchema } from "../schemas";
-import { FORM_ERROR, StoreForm } from "./StoreForm";
-import { useMutation, useQuery } from "@blitzjs/rpc";
-import { useRouter } from "next/navigation";
+"use client"
+import { Suspense } from "react"
+import updateStore from "../mutations/updateStore"
+import getStore from "../queries/getStore"
+import { UpdateStoreSchema } from "../schemas"
+import { FORM_ERROR, StoreForm } from "./StoreForm"
+import { useMutation, useQuery } from "@blitzjs/rpc"
+import { useRouter } from "next/navigation"
 
 export const EditStore = ({ storeId }: { storeId: number }) => {
   const [store, { setQueryData }] = useQuery(
@@ -15,9 +15,9 @@ export const EditStore = ({ storeId }: { storeId: number }) => {
       // This ensures the query never refreshes and overwrites the form data while the user is editing.
       staleTime: Infinity,
     }
-  );
-  const [updateStoreMutation] = useMutation(updateStore);
-  const router = useRouter();
+  )
+  const [updateStoreMutation] = useMutation(updateStore)
+  const router = useRouter()
   return (
     <>
       <div>
@@ -33,19 +33,19 @@ export const EditStore = ({ storeId }: { storeId: number }) => {
                 const updated = await updateStoreMutation({
                   ...values,
                   id: store.id,
-                });
-                await setQueryData(updated);
-                router.refresh();
+                })
+                //await setQueryData(updated);
+                router.refresh()
               } catch (error: any) {
-                console.error(error);
+                console.error(error)
                 return {
                   [FORM_ERROR]: error.toString(),
-                };
+                }
               }
             }}
           />
         </Suspense>
       </div>
     </>
-  );
-};
+  )
+}

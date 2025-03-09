@@ -1,7 +1,6 @@
 import { resolver, useQuery } from "@blitzjs/rpc"
 import db, { Item, List } from "db"
 import { UpdateListSchema } from "../schemas"
-import getList from "../queries/getList"
 
 export default resolver.pipe(
   resolver.zod(UpdateListSchema),
@@ -10,7 +9,7 @@ export default resolver.pipe(
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     var listItems: Item[] = []
 
-    const dList = await db.list.update({
+    await db.list.update({
       where: { id: input.id },
       data: { name: { set: "" }, items: { set: [] } },
       select: { id: true, name: true, items: true },

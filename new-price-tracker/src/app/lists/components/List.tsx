@@ -4,31 +4,56 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import deleteList from "../mutations/deleteList"
 import getList from "../queries/getList"
-import db, { Item, Store } from "@/db"
-import getItems from "../../items/queries/getItems"
-import getStores from "../../stores/queries/getStores"
-import getUniqueItems from "../../items/queries/getUniqueItems"
-import getItem from "../../items/queries/getItem"
 import getUniqueStores from "../../stores/queries/getUniqueStores"
-import getStore from "../../stores/queries/getStore"
 
 export const List = ({ listId }: { listId: number }) => {
   const router = useRouter()
   const [deleteListMutation] = useMutation(deleteList)
   const [list] = useQuery(getList, { id: listId })
-  const [stors] = useQuery(getStores, {})
-  const listItems = list.items
-  const items: Item[] = []
-  const stores: Store[] = []
+
+  const listItems: string[] = []
+  list.items.forEach((item) => {
+    !listItems.includes(item.name) ? listItems.push(item.name) : []
+  })
+
+  /* Yooo This could easily be its own component.. It basically gets total price of list by each store */
+  /* ----------------------------------------------------------------------------------------------------- */
+  let priceTotal = new Map()
+  let itemTotal = new Map()
+  const [stores] = useQuery(getUniqueStores, {})
+
+  let i = 0
+  stores.forEach((store) => {
+    let pTotal = 0
+    let iTotal = 0
+    priceTotal.set(store.id, 0)
+    store.items.forEach((item) => {
+      listItems.includes(item.name) ? (pTotal += item.price) && iTotal++ : []
+    })
+    priceTotal.set(store.id, pTotal)
+    itemTotal.set(store.id, iTotal)
+    i++
+  })
+  /* ------------------------------------------------------------------------------------------------------ */
 
   return (
     <>
       <div>
         <h1>{list.name}</h1>
         {/*<pre>{JSON.stringify(list, null, 2)}</pre>*/}
-
+        {/* -------------------------------------Same here for the new component---------------------------------------------- */}
         <ul>
-          {listItems
+          {stores.map((store) => (
+            <li key={store.id}>
+              {store.name}: {priceTotal.get(store.id)}, Total # of Items:{itemTotal.get(store.id)}
+            </li>
+          ))}
+        </ul>
+        {/* -------------------------------------------------------------------------------------------------------------------- */}
+
+        {/* Below, it just lists all items available */}
+        <ul>
+          {list.items
             .sort((pID, cID) => pID.storeName.localeCompare(cID.storeName))
             .map((items) => (
               <li key={items.id}>

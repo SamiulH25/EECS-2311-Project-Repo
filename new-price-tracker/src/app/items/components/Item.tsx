@@ -10,7 +10,7 @@ export const Item = ({ itemId }: { itemId: number }) => {
   const router = useRouter()
   const [deleteItemMutation] = useMutation(deleteItem)
   const [item] = useQuery(getItem, { id: itemId })
-  const [store] = useQuery(getStore, { id: item.storeId })
+  const [store] = useQuery(getStore, { id: item.store.id })
 
   return (
     <>
