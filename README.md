@@ -1,8 +1,6 @@
-
 # The Price is Right
 
 Welcome to Team 2's Project! The Price is Right is a web app created to help consumers find the best prices for their grocery list.
-
 
 ## Run Locally
 
@@ -18,10 +16,16 @@ Go to the project directory
   cd new-price-tracker
 ```
 
-Install Blitz and dependencies
+Install Blitz
 
 ```bash
   npm install -g blitz
+```
+
+Install dependencies
+
+```bash
+  npm install
 ```
 
 Seed the database
@@ -37,16 +41,15 @@ Start the development server
 ```
 
 Navigate to http://localhost:3000 to see the website in action!
+
 ## Features
 
 - Create, View, Edit, and Delete Items
 - Create, View, Edit, and Delete Stores
 - Create, View, Edit, and Delete Grocery Lists
 - Compare Prices of Items from Different Stores
-- Find the Store with the Cheapest Overall Price for your Grocery List 
+- Find the Store with the Cheapest Overall Price for your Grocery List
 - Etc.
-
-
 
 ## Usage/Examples
 
@@ -81,7 +84,6 @@ function List (listId) {
 }
 ```
 
-
 ## Query API Reference
 
 #### Get Items
@@ -102,14 +104,12 @@ function List (listId) {
   item.storeLocation
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `Int` | **Required**. An item's unique identifier |
-| `name` | `String` | **Required**. An item's name |
-| `price` | `Float` | **Required**. An item's price |
-| `store` | `Store` | **Required**. The store where this item is sold |
-
-
+| Parameter | Type     | Description                                     |
+| :-------- | :------- | :---------------------------------------------- |
+| `id`      | `Int`    | **Required**. An item's unique identifier       |
+| `name`    | `String` | **Required**. An item's name                    |
+| `price`   | `Float`  | **Required**. An item's price                   |
+| `store`   | `Store`  | **Required**. The store where this item is sold |
 
 #### Get Stores
 
@@ -126,14 +126,12 @@ function List (listId) {
   store.items
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `Int` | **Required**. A store's unique identifier |
-| `name` | `String` | **Required**. A store's name |
-| `location` | `String` | **Required**. A store's location |
-| `items` | `Item[]` | **Required**. The array of items a store has |
-
-
+| Parameter  | Type     | Description                                  |
+| :--------- | :------- | :------------------------------------------- |
+| `id`       | `Int`    | **Required**. A store's unique identifier    |
+| `name`     | `String` | **Required**. A store's name                 |
+| `location` | `String` | **Required**. A store's location             |
+| `items`    | `Item[]` | **Required**. The array of items a store has |
 
 #### Get Lists
 
@@ -149,13 +147,11 @@ function List (listId) {
   list.items
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `id` | `Int` | **Required**. A list's unique identifier |
-| `name` | `String` | **Required**. A list's name |
-| `items` | `Item[]` | **Required**. The array of items a list has |
-
-
+| Parameter | Type     | Description                                 |
+| :-------- | :------- | :------------------------------------------ |
+| `id`      | `Int`    | **Required**. A list's unique identifier    |
+| `name`    | `String` | **Required**. A list's name                 |
+| `items`   | `Item[]` | **Required**. The array of items a list has |
 
 ## Running Tests
 
@@ -165,7 +161,6 @@ To run tests, run the following command
   blitz test
 ```
 
-
 ## To Do
 
 - Scrub websites of major grocery stores for data
@@ -173,8 +168,6 @@ To run tests, run the following command
 - Estimate profit margins
 - Etc.
 
-
 ## Authors
 
 - [@Nevan](https://github.com/naug-nevan-216527657)
-

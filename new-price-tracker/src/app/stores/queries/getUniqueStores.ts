@@ -11,7 +11,7 @@ export default resolver.pipe(
   async ({ where, orderBy, skip = 0, take = 100 }: GetUniqueStoresInput) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
     const store = await db.store.findMany({
-      select: { id: true, name: true, location: true, items: true, totalPrice: true },
+      select: { id: true, name: true, location: true, items: true },
     })
 
     if (!store) throw new NotFoundError()
