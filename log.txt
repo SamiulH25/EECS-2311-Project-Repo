@@ -50,11 +50,20 @@ Week 6 (Mon: Feb 10)
 Week 7 (Mon: Feb 17)
 - approx. 3 hours
 - The team members worked on their assigned Major User stories tasks
-     - Ashdika's task was on user authentication 
+     - Ashdika's task was on the user authentication and documentation
+     - Anna's task was on the UI development of the website design
+     - Nevan's task was on list functionality and logic of sorting, comparing, and displaying the data
+     - Samiul's task was on stub and real database
+     - Dilpreet's task was on the components needed to display on the website
 - Friday meeting was scheduled for the team members to give an update on the progress of their tasks and complete their pending tasks.
 
 
 Week 8 (Mon: Feb 24)
 - In-Lab meeting minutes: approx. 45 mins
 - In-class meeting minutes: approx. 30 mins
-- Reorganized the GitHub repository before committing and pushing the files based on their assigned user stories' tasks.
+- Reorganized the GitHub repository before committing and pushing the files based on their assigned user stories' tasks for ITR1.
+
+Week 9 (Mon: 3 March)
+- In-Lab meeting minutes: approx. 30 mins
+- In-class meeting minutes: approx. 20 mins
+- Updating, debugging, and finalizing our main tasks before the Deliverable 1 deadline while discussing the progress with the team through Discord communication.
