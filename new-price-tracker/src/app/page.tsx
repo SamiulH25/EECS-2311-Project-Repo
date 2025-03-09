@@ -14,7 +14,7 @@ export default async function Home() {
       <div className={styles.container}>
         <div className={styles.toastContainer}>
           <p>
-            <strong>Welcome!</strong> Your app is ready, including user sign-up and log-in.
+            Welcome to <strong>The Price is Right</strong>! 
           </p>
         </div>
 
