@@ -36,6 +36,7 @@ export const EditStore = ({ storeId }: { storeId: number }) => {
                 })
                 //await setQueryData(updated);
                 router.refresh()
+                router.push(`/stores/${store.id}`)
               } catch (error: any) {
                 console.error(error)
                 return {

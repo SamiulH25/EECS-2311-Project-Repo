@@ -15,6 +15,7 @@ export const List = ({ listId }: { listId: number }) => {
   const [list] = useQuery(getList, { id: listId })
 
   const listItems: string[] = []
+  
   list.items.forEach((item) => {
     !listItems.includes(item.name) ? listItems.push(item.name) : []
   })

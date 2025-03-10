@@ -12,7 +12,7 @@ export default function Page() {
   return (
     <div>
       <p>
-        <Link href={"/lists/new"}>Create List</Link>
+        <Link href={"/lists/new"}> Create List </Link>
       </p>
       <Suspense fallback={<div>Loading...</div>}>
         <ListsList />

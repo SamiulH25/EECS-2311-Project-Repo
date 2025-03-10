@@ -1,9 +1,5 @@
 "use client"
 import { useMutation, useQuery } from "@blitzjs/rpc"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import deleteList from "../mutations/deleteList"
-import getList from "../queries/getList"
 import getUniqueStores from "../../stores/queries/getUniqueStores"
 
 export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
