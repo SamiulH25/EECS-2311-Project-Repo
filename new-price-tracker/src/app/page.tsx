@@ -12,17 +12,12 @@ export default async function Home() {
     <>
       <div className={styles.globe} />
       <div className={styles.container}>
-        <div className={styles.toastContainer}>
-          <p>
-            Welcome to <strong>The Price is Right</strong>! 
-          </p>
-        </div>
 
         <main className={styles.main}>
           <div className={styles.wrapper}>
             <div className={styles.header}>
               
-              <h1>The database & authentication is ready. Try it by signing up.</h1>
+              <h1>Welcome to <strong>The Price is Right</strong>!</h1>
 
               {/* Auth */}
 
