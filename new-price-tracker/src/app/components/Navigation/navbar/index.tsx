@@ -7,15 +7,24 @@ import styles from "src/app/styles/Home.module.css"
 const Navbar = () => {
   return (
     <>
-    <div className={styles.toastContainer}>
+    <div className={styles.navbar}>
       <div className={styles.buttonContainer}>
-        <div className={styles.Navbar}>
-            
+        <div>
             <ul className={styles.cleanList}>
               <li className={styles.linkContL}><Logo /></li>
               <li className={styles.linkContM}>
                 <Link href="/lists">
                   <p>Shopping Lists</p>
+                </Link>
+              </li>
+              <li className={styles.linkContM}>
+                <Link href="/items">
+                  <p>Items</p>
+                </Link>
+              </li>
+              <li className={styles.linkContM}>
+                <Link href="/stores">
+                  <p>Stores</p>
                 </Link>
               </li>
               <li className={styles.linkContM}>

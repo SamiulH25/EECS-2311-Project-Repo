@@ -16,16 +16,18 @@ export const SignupForm = (props: SignupFormProps) => {
   const router = useRouter()
 
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.globe} />
-      <h1>Create an Account</h1>
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <h1>Create an <strong>Account</strong></h1>
+          </div>
 
-      <div className={styles.body}>
-      <Form
-        submitText="Create Account"
-        schema={Signup}
-        initialValues={{ email: "", password: "" }}
-        onSubmit={async (values) => {
+          <Form className={styles.centerBox}
+          submitText="Create Account"
+          schema={Signup}
+          initialValues={{ email: "", password: "" }}
+          onSubmit={async (values) => {
           try {
             await signupMutation(values)
             router.refresh()
@@ -42,9 +44,9 @@ export const SignupForm = (props: SignupFormProps) => {
       >
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
-      </Form>
+          </Form>
+        
       </div>
-
     </div>
   )
 }
