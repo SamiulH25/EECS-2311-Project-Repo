@@ -43,11 +43,12 @@ export function ListForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
       <LabeledTextField label="List name:" name="name" type="text" placeholder="Type Here" />
 
       <div>
+        <h2>Available Items</h2>
         <ul>
           {items.map((item) => (
             <label key={item.id}>
               <Field type="checkbox" name="items" value={item.name} />
-              {item.name} from {item.storeId} <br />
+              {item.name} <br />
             </label>
           ))}
         </ul>

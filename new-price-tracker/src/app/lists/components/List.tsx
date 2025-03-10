@@ -58,9 +58,8 @@ export const List = ({ listId }: { listId: number }) => {
             .map((items) => (
               <li key={items.id}>
                 <Link href={`/items/${items.id}`}>
-                  {items.name} from {items.storeName} at {items.storeLocation}
+                  {items.name} from {items.storeName}: {items.price}
                 </Link>
-                <p>{items.price}</p>
               </li>
             ))}
         </ul>

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <h1>Create New Project</h1>
+      <h1>Create New List</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <New__List />
       </Suspense>
