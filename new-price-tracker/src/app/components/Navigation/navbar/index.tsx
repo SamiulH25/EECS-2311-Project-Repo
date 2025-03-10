@@ -18,6 +18,16 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className={styles.linkContM}>
+                <Link href="/items">
+                  <p>Items</p>
+                </Link>
+              </li>
+              <li className={styles.linkContM}>
+                <Link href="/stores">
+                  <p>Stores</p>
+                </Link>
+              </li>
+              <li className={styles.linkContM}>
                 <Link href="/">
                   <p>About Us</p>
                 </Link>
