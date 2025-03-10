@@ -12,15 +12,19 @@ export const Item = ({ itemId }: { itemId: number }) => {
   const [item] = useQuery(getItem, { id: itemId })
   const [store] = useQuery(getStore, { id: item.store.id })
 
+  const [itemS] = useQuery(getItems, {where: {name: item.name}})
+
   return (
     <>
       <div>
         <h1>{item.name}</h1>
         <h3>{item.price}</h3>
         <h5>
-          From {store.name}, {store.location}
+          From {store.name}
         </h5>
-        <pre>{JSON.stringify(item, null, 2)}</pre>
+
+
+
 
         <Link href={`/items/${item.id}/edit`}>Edit</Link>
 

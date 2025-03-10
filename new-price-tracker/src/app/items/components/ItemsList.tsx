@@ -2,7 +2,7 @@
 import { usePaginatedQuery } from "@blitzjs/rpc";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import getItems from "../queries/getItems";
+import getUniqueItems from "../queries/getUniqueItems";
 import { useSearchParams } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { Route } from "next";
@@ -12,7 +12,7 @@ const ITEMS_PER_PAGE = 100;
 export const ItemsList = () => {
   const searchparams = useSearchParams()!;
   const page = Number(searchparams.get("page")) || 0;
-  const [{ items, hasMore }] = usePaginatedQuery(getItems, {
+  const [{ items, hasMore }] = usePaginatedQuery(getUniqueItems, {
     orderBy: { id: "asc" },
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
@@ -36,7 +36,7 @@ export const ItemsList = () => {
       <ul>
         {items.map((item) => (
           <li key={item.id}>
-            <Link href={`/items/${item.id}`}>{item.name}</Link>
+            <Link href={`/items/${item.name}`}>{item.name}</Link>
           </li>
         ))}
       </ul>
