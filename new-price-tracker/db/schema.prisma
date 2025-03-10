@@ -92,10 +92,9 @@ model Item {
   upvotes   Int    @default(0)
   downvotes Int    @default(0)
 
-  store         Store  @relation(fields: [storeId, storeName, storeLocation], references: [id, name, location])
+  store         Store  @relation(fields: [storeId, storeName], references: [id, name])
   storeId       Int
   storeName     String
-  storeLocation String
 
   list List[] @relation("ItemList")
 }

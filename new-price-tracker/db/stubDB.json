@@ -2,7 +2,6 @@
     "stores": [
         {
             "name": "Walmart",
-            "location": "York Lanes",
             "items": [
                 {
                     "name": "Apple",
@@ -30,7 +29,6 @@
 
         {
             "name": "NoFrills",
-            "location": "Downtown",
             "items": [
                 {
                     "name": "Apple",
@@ -58,7 +56,6 @@
 
         {
             "name": "Sobeys",
-            "location": "York Lanes",
             "items": [
                 {
                     "name": "Apple",
@@ -85,7 +82,6 @@
 
         {
             "name": "Loblaws",
-            "location": "Mississauga",
             "items": [
                 {
                     "name": "Apple",
@@ -109,34 +105,7 @@
                 }
             ]
 
-        },
-
-        {
-            "name": "Walmart",
-            "location": "Downtown",
-            "items": [
-                {
-                    "name": "Apple",
-                    "price": 1.99
-                },
-                {
-                    "name": "Eggs",
-                    "price": 3.49
-                },
-                {
-                    "name": "Milk",
-                    "price": 5.69
-                },
-                {
-                    "name": "Rye Bread",
-                    "price": 4.99
-                },
-                {
-                    "name": "Dog Food",
-                    "price": 13.99
-                }
-            ]
-
         }
+
     ]
 }

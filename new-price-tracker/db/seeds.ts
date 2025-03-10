@@ -14,7 +14,7 @@ const seed = async () => {
     
     await db.store.create({ data: { 
 
-      name: stubDB.stores[i].name , location: stubDB.stores[i].location, 
+      name: stubDB.stores[i].name,
 
       items: {
         create: [

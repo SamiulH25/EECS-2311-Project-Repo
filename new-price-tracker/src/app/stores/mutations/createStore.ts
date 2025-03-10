@@ -7,7 +7,7 @@ export default resolver.pipe(
   resolver.authorize(),
   async (input) => {
     // TODO: in multi-tenant app, you must add validation to ensure correct tenant
-    const store = await db.store.create({ data: { name: input.name, location: input.location } })
+    const store = await db.store.create({ data: { name: input.name } })
 
     return store
   }
