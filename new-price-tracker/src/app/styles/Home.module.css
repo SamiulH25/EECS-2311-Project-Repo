@@ -9,8 +9,16 @@
 }
 
 .navbar {
-  float: left;
-  display: inline;
+  border: 1px solid #378d3310;
+  padding: 0 1rem;
+  background: #378d3310;
+  color: #1f745a;
+  text-align: center;
+  position: sticky;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  width: 100%;
 }
 
 /*removes bullets from list*/

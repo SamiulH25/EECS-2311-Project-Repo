@@ -7,10 +7,9 @@ import styles from "src/app/styles/Home.module.css"
 const Navbar = () => {
   return (
     <>
-    <div className={styles.toastContainer}>
+    <div className={styles.navbar}>
       <div className={styles.buttonContainer}>
-        <div className={styles.Navbar}>
-            
+        <div>
             <ul className={styles.cleanList}>
               <li className={styles.linkContL}><Logo /></li>
               <li className={styles.linkContM}>
