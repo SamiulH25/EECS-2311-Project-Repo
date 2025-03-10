@@ -1,42 +1,42 @@
-"use client";
-import { usePaginatedQuery } from "@blitzjs/rpc";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import getUniqueItems from "../queries/getUniqueItems";
-import { useSearchParams } from "next/navigation";
-import { usePathname } from "next/navigation";
-import { Route } from "next";
+"use client"
+import { usePaginatedQuery } from "@blitzjs/rpc"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import getUniqueItems from "../queries/getUniqueItems"
+import { useSearchParams } from "next/navigation"
+import { usePathname } from "next/navigation"
+import { Route } from "next"
 
-const ITEMS_PER_PAGE = 100;
+const ITEMS_PER_PAGE = 100
 
 export const ItemsList = () => {
-  const searchparams = useSearchParams()!;
-  const page = Number(searchparams.get("page")) || 0;
+  const searchparams = useSearchParams()!
+  const page = Number(searchparams.get("page")) || 0
   const [{ items, hasMore }] = usePaginatedQuery(getUniqueItems, {
     orderBy: { id: "asc" },
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
-  });
-  const router = useRouter();
-  const pathname = usePathname();
+  })
+  const router = useRouter()
+  const pathname = usePathname()
 
   const goToPreviousPage = () => {
-    const params = new URLSearchParams(searchparams);
-    params.set("page", (page - 1).toString());
-    router.push((pathname + "?" + params.toString()) as Route);
-  };
+    const params = new URLSearchParams(searchparams)
+    params.set("page", (page - 1).toString())
+    router.push((pathname + "?" + params.toString()) as Route)
+  }
   const goToNextPage = () => {
-    const params = new URLSearchParams(searchparams);
-    params.set("page", (page + 1).toString());
-    router.push((pathname + "?" + params.toString()) as Route);
-  };
+    const params = new URLSearchParams(searchparams)
+    params.set("page", (page + 1).toString())
+    router.push((pathname + "?" + params.toString()) as Route)
+  }
 
   return (
     <div>
       <ul>
         {items.map((item) => (
           <li key={item.id}>
-            <Link href={`/items/${item.name}`}>{item.name}</Link>
+            <Link href={`/items/${item.id}`}>{item.name}</Link>
           </li>
         ))}
       </ul>
@@ -48,5 +48,5 @@ export const ItemsList = () => {
         Next
       </button>
     </div>
-  );
-};
+  )
+}
