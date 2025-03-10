@@ -5,6 +5,7 @@ import signup from "../mutations/signup"
 import { Signup } from "../validations"
 import { useMutation } from "@blitzjs/rpc"
 import { useRouter } from "next/navigation"
+import styles from "src/app/styles/Home.module.css"
 
 type SignupFormProps = {
   onSuccess?: () => void
@@ -16,8 +17,10 @@ export const SignupForm = (props: SignupFormProps) => {
 
   return (
     <div>
+      <div className={styles.globe} />
       <h1>Create an Account</h1>
 
+      <div className={styles.body}>
       <Form
         submitText="Create Account"
         schema={Signup}
@@ -40,6 +43,8 @@ export const SignupForm = (props: SignupFormProps) => {
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
       </Form>
+      </div>
+
     </div>
   )
 }

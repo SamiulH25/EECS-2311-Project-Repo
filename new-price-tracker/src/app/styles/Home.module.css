@@ -1,3 +1,35 @@
+.navbar {
+  float: left;
+  display: inline;
+}
+
+/*removes bullets from list*/
+.cleanList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/*aligns item to the left*/
+.linkContL {
+  float: left;
+  padding-right: 5rem;
+}
+
+/*aligns item to the middle*/
+.linkContM {
+  float: left;
+  padding-right: 2rem;
+}
+
+/*aligns item to the right*/
+.linkContR {
+  float: right;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -69,8 +101,8 @@
   background-image: radial-gradient(
     95.63% 95.63% at 95.92% 0%,
     rgba(255, 255, 255, 0.62) 0%,
-    #8155ff38 60.42%,
-    #002fff5c 169%
+    #378d3338 60.42%,
+    #2b83465c 169%
   );
   filter: blur(8vmin);
 }
@@ -93,7 +125,7 @@
 }
 
 .code span {
-  background: rgba(124, 58, 237, 50%);
+  background: #1f745ba2;
   border-radius: 50rem;
   font-size: 14px;
   font-weight: 500;
@@ -103,11 +135,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(57, 33, 97);
+  color: #145a61;
 }
 
 .code pre {
-  background: rgba(124, 58, 237, 12%);
+  background: #1f745a30;
   border-radius: 4px;
   padding: 0.7em 1.4em;
   text-align: center;
@@ -116,27 +148,27 @@
 .code code {
   font-size: 0.86em;
   font-weight: bold;
-  color: rgb(124, 58, 237);
+  color: #145a61;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .toastContainer {
-  border: 1px solid #edff;
+  border: 1px solid #378d3310;
   padding: 0 1rem;
-  background: #eeff;
-  color: #62af;
+  background: #378d3310;
+  color: #1f745a;
   text-align: center;
 }
 
 .toastContainer strong {
-  color: rgb(124, 58, 237);
+  color: #145a61;
 }
 
 .textLink {
-  color: rgb(124, 58, 237);
+  color: #378d33;
   background: linear-gradient(to right, rgba(231, 216, 246, 1), rgba(231, 216, 246, 1)),
-    linear-gradient(to right, rgba(99, 1, 235, 1), rgba(124, 58, 237, 1), rgba(231, 216, 246, 1));
+    linear-gradient(to right, #378d33, #2b8346, #1f745a);
   background-size: 100% 1px, 0 1px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;
@@ -160,7 +192,7 @@
   position: absolute;
   right: 6px;
   top: 6px;
-  color: #b1a5c4;
+  color: #a5c4b1;
 }
 
 .arrowIcon::after {
@@ -186,7 +218,7 @@
 }
 
 .button {
-  background: linear-gradient(to top, rgb(124, 58, 237), rgb(117, 81, 236));
+  background: linear-gradient(to top, #378d33, #1f745a);
   border: 1px solid rgb(231, 216, 246);
   color: white;
   text-shadow: rgba(0, 0, 0, 0.25) 0px 3px 8px;
@@ -211,14 +243,14 @@
 .button:hover {
   color: white;
   text-shadow: rgb(0 0 0 / 56%) 0px 3px 12px;
-  box-shadow: rgb(80 63 205 / 50%) 0px 1px 40px;
+  box-shadow: #145a6180 0px 1px 40px;
 }
 
 .loginButton {
   composes: button;
   background: rgb(248 250 252);
   border: 1px solid rgb(231, 216, 246);
-  color: rgb(30 41 59);
+  color: #145a61;
   text-shadow: none;
 }
 
@@ -228,7 +260,7 @@
 }
 
 .card:hover .arrowIcon {
-  color: #7450ec;
+  color: #378d33;
 }
 
 .linkGrid {
@@ -257,8 +289,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #7450ec;
-  border-color: #7450ec;
+  color: #2b8346;
+  border-color: #2b8346;
 }
 
 .card h2 {
@@ -280,7 +312,7 @@
 .logo svg {
   height: 100%;
   width: 200px;
-  fill: #7450ec;
+  fill: #2b8346;
 }
 
 /* MOBILE */
