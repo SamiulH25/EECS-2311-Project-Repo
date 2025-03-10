@@ -1,3 +1,13 @@
+.centerBox {
+  align-self: center;
+  max-width: min(300px, var(--screen-width));
+  border: 1px solid #378d3310;
+  padding: 0 1rem;
+  background: #378d3310;
+  color: #1f745a;
+  text-align: center;
+}
+
 .navbar {
   float: left;
   display: inline;
