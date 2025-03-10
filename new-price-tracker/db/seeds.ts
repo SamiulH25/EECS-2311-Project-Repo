@@ -10,7 +10,7 @@ const itemPrices = [1.99, 0.99, 5.99, 10.99, 13.99];
 
 const seed = async () => {
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     
     await db.store.create({ data: { 
 
