@@ -24,7 +24,6 @@ export default resolver.pipe(
           where,
           orderBy,
           distinct,
-          select: { id: true, name: true, price: true, store: true },
         }),
     })
 

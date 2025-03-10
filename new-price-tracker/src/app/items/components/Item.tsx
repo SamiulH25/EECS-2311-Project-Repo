@@ -22,8 +22,8 @@ export const Item = ({ itemId }: { itemId: number }) => {
         <table>
           <thead>
             <tr>
-              <th>Stores Found In</th>
-              <th>Prices</th>
+              <th>Stores </th>
+              <th>Prices </th>
             </tr>
           </thead>
           <tbody>
