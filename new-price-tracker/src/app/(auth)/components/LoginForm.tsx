@@ -9,6 +9,7 @@ import { useMutation } from "@blitzjs/rpc"
 import { useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
 import type { Route } from "next"
+import styles from "src/app/styles/Home.module.css"
 
 type LoginFormProps = {
   onSuccess?: (user: PromiseReturnType<typeof login>) => void
@@ -20,9 +21,14 @@ export const LoginForm = (props: LoginFormProps) => {
   const next = useSearchParams()?.get("next")
   return (
     <>
-      <h1>Login</h1>
+      <div className={styles.main}>
+        <div className={styles.globe} />
+          <div className={styles.wrapper}>
+          <div className={styles.header}>
+            <h1>Login</h1>
+          </div>
 
-      <Form
+          <Form className={styles.centerBox}
         submitText="Login"
         schema={Login}
         initialValues={{ email: "", password: "" }}
@@ -52,10 +58,12 @@ export const LoginForm = (props: LoginFormProps) => {
         <div>
           <Link href={"/forgot-password"}>Forgot your password?</Link>
         </div>
-      </Form>
+          </Form>
 
-      <div style={{ marginTop: "1rem" }}>
-        Or <Link href="/signup">Sign Up</Link>
+          <div className={styles.header}>
+            <div>Or <Link className={styles.textLink} href="/signup">Sign Up</Link></div>
+          </div>
+        </div>
       </div>
     </>
   )

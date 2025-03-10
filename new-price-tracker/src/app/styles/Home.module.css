@@ -185,8 +185,9 @@
 
 .textLink {
   color: #378d33;
-  background: linear-gradient(to right, rgba(231, 216, 246, 1), rgba(231, 216, 246, 1)),
-    linear-gradient(to right, #378d33, #2b8346, #1f745a);
+  background:
+  linear-gradient(to right, #6ebd59, #6ebd59),
+  linear-gradient(to right, #378d33, #2b8346, #1f745a);
   background-size: 100% 1px, 0 1px;
   background-position: 100% 100%, 0 100%;
   background-repeat: no-repeat;

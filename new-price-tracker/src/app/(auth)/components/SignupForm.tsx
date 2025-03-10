@@ -21,8 +21,8 @@ export const SignupForm = (props: SignupFormProps) => {
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <h1>Create an <strong>Account</strong></h1>
+          </div>
 
-          
           <Form className={styles.centerBox}
           submitText="Create Account"
           schema={Signup}
@@ -45,8 +45,7 @@ export const SignupForm = (props: SignupFormProps) => {
         <LabeledTextField name="email" label="Email" placeholder="Email" />
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
           </Form>
-          
-        </div>
+        
       </div>
     </div>
   )
