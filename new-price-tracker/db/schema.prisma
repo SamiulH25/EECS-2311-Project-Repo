@@ -64,11 +64,10 @@ model Store {
   updatedAt DateTime @updatedAt
 
   name     String
-  location String
 
   items Item[]
 
-  @@unique([id, name, location])
+  @@unique([id, name])
 }
 
 model List {
