@@ -28,6 +28,12 @@ Install dependencies
   npm install
 ```
 
+Reset the Database
+
+```bash
+  blitz prisma migrate reset
+```
+
 Seed the database
 
 ```bash
