@@ -9,6 +9,7 @@ export function StoreForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   return (
     <Form<S> {...props}>
       {/* template: <__component__ name="__fieldName__" label="__Field_Name__" placeholder="__Field_Name__"  type="__inputType__" /> */}
+      <LabeledTextField name="name" label="Store Name" />
     </Form>
   );
 }
