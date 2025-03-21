@@ -71,3 +71,7 @@ Week 9 (Mon: 3 March)
 Week 10 (Mon: 10 March)
 - In-class meeting minutes: approx. 15 mins
 - Completed the Deliverable 1 demo successfully and discussed the improvements and debugging needed to work on the API and create grocery lists to give organized, accurate prices, and grocery store locations.
+
+Week 11 (Mon: 17 March)
+- In-class meeting minutes: approx. 20 mins
+- A Friday meeting has been scheduled to work on Lab 5 Take-home Assignment
