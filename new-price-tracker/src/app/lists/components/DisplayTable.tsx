@@ -25,6 +25,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
 
 //stores the id of the best store
   let beststoreid = 0;
+  let bestStoreName = "";
   //temporaryily stores the lowest price, can be used to show the price if you want.
   let currentlowest = 0;
   //boolean for the next loops
@@ -41,12 +42,14 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
         if (currentlowest == 0) {
           currentlowest = priceTotal.get(store.id);
           beststoreid = store.id;
+          bestStoreName = store.name;
           hasallitems = true;
         } //if the currentlowest has already been set then it compares the currentlowest to the price total of the store we are currrently on
         else {
           if (currentlowest > priceTotal.get(store.id)) {
             currentlowest = priceTotal.get(store.id);
             beststoreid = store.id;
+            bestStoreName = store.name;
             hasallitems = true;
           }
         }
@@ -85,6 +88,8 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
           </tr>
         </tbody>
       </table>
+      <br/>
+      <h3>{bestStoreName} has most of your items and offers the best bang for your buck!</h3>
     </>
   )
 }
