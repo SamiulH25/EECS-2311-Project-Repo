@@ -21,9 +21,10 @@ export const List = ({ listId }: { listId: number }) => {
   })
 
   const uniqueItemList: Item[] = []
+  let numofitem = 0
   const [uniqueItems] = useQuery(getUniqueItems, {})
   uniqueItems.items.forEach((item) => {
-    listItems.includes(item.name) ? uniqueItemList.push(item) : []
+    listItems.includes(item.name) ? (uniqueItemList.push(item) && numofitem++) : []
   })
 
   return (
@@ -40,7 +41,7 @@ export const List = ({ listId }: { listId: number }) => {
           ))}
         </ul>
 
-        <DisplayTable listItems={listItems} />
+        <DisplayTable listItems={listItems} numofitem={numofitem} />
         <br />
 
         <Link href={`/lists/${list.id}/edit`}>Edit</Link>
