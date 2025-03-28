@@ -3,9 +3,10 @@ import { useMutation, useQuery } from "@blitzjs/rpc"
 import getUniqueStores from "../../stores/queries/getUniqueStores"
 import {Store} from "@/src/app/stores/components/Store";
 
-export const DisplayTable= ({ listItems }: { listItems: string[] }, {numofitem} : {numofitem : number}) => {
+export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   const [stores] = useQuery(getUniqueStores, {})
 
+  let numOfItems = listItems.length
   let priceTotal = new Map()
   //this stores the amount of items available in any store.
   let itemTotal = new Map()
@@ -14,6 +15,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }, {numofitem} 
     let pTotal = 0
     let iTotal = 0;
     priceTotal.set(store.id, 0)
+    itemTotal.set(store.id, 0)
     store.items.forEach((item) => {
       listItems.includes(item.name) ? (pTotal += item.price && iTotal++) : [];
     })
@@ -34,7 +36,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }, {numofitem} 
     //loops over all stores
     stores.forEach((store) => {
       //if a store with the correct number of items is found then does code or skips to next iteration
-      if (itemTotal.get(store.id) == numofitem-n) {
+      if (itemTotal.get(store.id) == numOfItems-n) {
         //if the currentlowest has yet to be set
         if (currentlowest == 0) {
           currentlowest = priceTotal.get(store.id);
@@ -53,6 +55,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }, {numofitem} 
     //increments the offset
     n++
   }
+
   return (
     <>
       <table style={{ width: "100vh", textAlign: "center" }}>
