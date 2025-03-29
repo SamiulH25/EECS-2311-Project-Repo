@@ -2,6 +2,7 @@
 import { useMutation, useQuery } from "@blitzjs/rpc"
 import getUniqueStores from "../../stores/queries/getUniqueStores"
 import {Store} from "@/src/app/stores/components/Store";
+import {CompareLists} from "@/src/app/lists/components/CompareLists";
 
 export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   const [stores] = useQuery(getUniqueStores, {})
@@ -34,42 +35,12 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
     }
 
   })
-
-//stores the id of the best store
-  let bestStoreId = 0;
-  let bestStoreName = "";
-  //temporaryily stores the lowest price, can be used to show the price if you want.
-  let currentLowest = 0;
-  //boolean for the next loops
-  let hasAllItems = false;
-  //offset for the number of items
-  let n = 0;
-  //loops till a store with (number of items in the list - n) items is found
-  while (hasAllItems == false) {
-    //loops over all stores
-    stores.forEach((store) => {
-      //if a store with the correct number of items is found then does code or skips to next iteration
-      if (itemTotal.get(store.id) == numOfItems-n) {
-        //if the currentlowest has yet to be set
-        if (currentLowest == 0) {
-          currentLowest = priceTotal.get(store.id);
-          bestStoreId = store.id;
-          bestStoreName = store.name;
-          hasAllItems = true;
-        } //if the currentlowest has already been set then it compares the currentlowest to the price total of the store we are currrently on
-        else {
-          if (currentLowest > priceTotal.get(store.id)) {
-            currentLowest = priceTotal.get(store.id);
-            bestStoreId = store.id;
-            bestStoreName = store.name;
-            hasAllItems = true;
-          }
-        }
-      }
-    })
-    //increments the offset
-    n++
-  }
+  const list: string[] = listItems
+  //constains the name and id of the best store as a map
+  //use "bestStoreId" and "bestStoreName" to access the data
+  let compareResults = new Map()
+  //calls CompareLists which does everything that was refactored
+  compareResults = CompareLists(list,priceTotal,itemTotal,missingItems);
 
   return (
     <>
@@ -101,7 +72,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
         </tbody>
       </table>
       <br/>
-        <h3>{bestStoreName} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(bestStoreId)} from your list</h3>
+        <h3>{compareResults.get("bestStoreName")} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(compareResults.get("bestStoreId"))} from your list</h3>
     </>
   )
 }
