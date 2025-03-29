@@ -10,47 +10,53 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   let priceTotal = new Map()
   //this stores the amount of items available in any store.
   let itemTotal = new Map()
+  let missingItems = new Map()
 
   stores.forEach((store) => {
     let pTotal = 0
     let iTotal = 0;
+    let mItem= listItems
     priceTotal.set(store.id, 0)
     itemTotal.set(store.id, 0)
+    missingItems.set(store.id, mItem.toString())
     store.items.forEach((item) => {
-      listItems.includes(item.name) ? (pTotal += item.price && iTotal++) : [];
+      listItems.includes(item.name) ? (pTotal += item.price) : [];
+      listItems.includes(item.name) ? (iTotal++) : [];
+      listItems.includes(item.name) ? (mItem = mItem.filter((it) => (it != item.name))) : [];
     })
     priceTotal.set(store.id, pTotal.toFixed(2))
     itemTotal.set(store.id, iTotal)
+    missingItems.set(store.id, mItem)
   })
 
 //stores the id of the best store
-  let beststoreid = 0;
+  let bestStoreId = 0;
   let bestStoreName = "";
   //temporaryily stores the lowest price, can be used to show the price if you want.
-  let currentlowest = 0;
+  let currentLowest = 0;
   //boolean for the next loops
-  let hasallitems = false;
+  let hasAllItems = false;
   //offset for the number of items
   let n = 0;
   //loops till a store with (number of items in the list - n) items is found
-  while (hasallitems == false) {
+  while (hasAllItems == false) {
     //loops over all stores
     stores.forEach((store) => {
       //if a store with the correct number of items is found then does code or skips to next iteration
       if (itemTotal.get(store.id) == numOfItems-n) {
         //if the currentlowest has yet to be set
-        if (currentlowest == 0) {
-          currentlowest = priceTotal.get(store.id);
-          beststoreid = store.id;
+        if (currentLowest == 0) {
+          currentLowest = priceTotal.get(store.id);
+          bestStoreId = store.id;
           bestStoreName = store.name;
-          hasallitems = true;
+          hasAllItems = true;
         } //if the currentlowest has already been set then it compares the currentlowest to the price total of the store we are currrently on
         else {
-          if (currentlowest > priceTotal.get(store.id)) {
-            currentlowest = priceTotal.get(store.id);
-            beststoreid = store.id;
+          if (currentLowest > priceTotal.get(store.id)) {
+            currentLowest = priceTotal.get(store.id);
+            bestStoreId = store.id;
             bestStoreName = store.name;
-            hasallitems = true;
+            hasAllItems = true;
           }
         }
       }
