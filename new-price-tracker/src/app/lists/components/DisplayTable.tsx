@@ -15,7 +15,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   stores.forEach((store) => {
     let pTotal = 0
     let iTotal = 0;
-    let mItem= listItems
+    let mItem = listItems
     priceTotal.set(store.id, 0)
     itemTotal.set(store.id, 0)
     missingItems.set(store.id, mItem.toString())
@@ -26,7 +26,13 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
     })
     priceTotal.set(store.id, pTotal.toFixed(2))
     itemTotal.set(store.id, iTotal)
-    missingItems.set(store.id, mItem)
+    if (mItem.length == 0) {
+      missingItems.set(store.id, "nothing")
+    }
+    else {
+      missingItems.set(store.id, mItem.toString())
+    }
+
   })
 
 //stores the id of the best store
@@ -95,8 +101,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
         </tbody>
       </table>
       <br/>
-      <h3>{bestStoreName} has most of your items and offers the best bang for your buck!</h3>
-      <h3>{bestStoreName} is missing {missingItems.get(bestStoreId)} from your list</h3>
+        <h3>{bestStoreName} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(bestStoreId)} from your list</h3>
     </>
   )
 }
