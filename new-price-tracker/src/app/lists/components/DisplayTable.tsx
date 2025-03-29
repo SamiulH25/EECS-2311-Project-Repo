@@ -96,6 +96,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
       </table>
       <br/>
       <h3>{bestStoreName} has most of your items and offers the best bang for your buck!</h3>
+      <h3>{bestStoreName} is missing {missingItems.get(bestStoreId)} from your list</h3>
     </>
   )
 }
