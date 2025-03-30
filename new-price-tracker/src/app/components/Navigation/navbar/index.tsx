@@ -33,7 +33,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className={styles.linkContL}>
-                <Link href="/">
+                <Link href="/profile">
                   <p>User Profile</p>
                 </Link>
               </li>
