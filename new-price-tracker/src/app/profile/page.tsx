@@ -60,7 +60,6 @@ export default function UserProfile() {
     <div className="profile-container">
       <h1>User Profile</h1>
 
-      {/* Display User Information */}
       <div className="info">
         <p><strong>Email:</strong> {user.email}</p>
         <p><strong>Role:</strong> {user.role}</p>
@@ -83,7 +82,6 @@ export default function UserProfile() {
           <option value="cart">Cart</option>
         </select>
       </div>
-
 
       {memeUrl && (
         <div className="meme-container">
