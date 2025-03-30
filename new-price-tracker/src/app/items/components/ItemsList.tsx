@@ -6,6 +6,7 @@ import getUniqueItems from "../queries/getUniqueItems"
 import { useSearchParams } from "next/navigation"
 import { usePathname } from "next/navigation"
 import { Route } from "next"
+import styles from "../styles/Home.module.css"
 
 const ITEMS_PER_PAGE = 100
 
@@ -32,7 +33,8 @@ export const ItemsList = () => {
   }
 
   return (
-    <div>
+    <div >
+      
       <ul>
         {items.map((item) => (
           <li key={item.id}>

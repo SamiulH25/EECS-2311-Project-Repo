@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ListsList } from "./components/ListsList";
+import styles from "../styles/Home.module.css"
 
 export const metadata: Metadata = {
   title: "Lists",
@@ -11,12 +12,28 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div>
-      <p>
-        <Link href={"/lists/new"}> Create List </Link>
-      </p>
-      <Suspense fallback={<div>Loading...</div>}>
-        <ListsList />
-      </Suspense>
+
+      <div className={styles.globe} />
+
+      <div className={styles.wrapper}>
+        
+        <div className={styles.header}>
+          <h1><strong>Your</strong> Lists</h1>
+        </div>
+
+        <div className={styles.centerList}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <ListsList />
+          </Suspense>
+
+          <p>
+            <Link href={"/lists/new"} className={styles.button}>
+            Create List
+            </Link>
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 }
