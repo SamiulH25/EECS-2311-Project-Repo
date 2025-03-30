@@ -4,8 +4,8 @@ import { New__Item } from "../components/NewItem"
 import styles from "../../styles/Home.module.css"
 
 export const metadata: Metadata = {
-  title: "New Project",
-  description: "Create a new project",
+  title: "New Item",
+  description: "Create a new item",
 }
 
 export default function Page() {
