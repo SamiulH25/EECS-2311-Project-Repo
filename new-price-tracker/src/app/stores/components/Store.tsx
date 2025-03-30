@@ -14,7 +14,17 @@ export const Store = ({ storeId }: { storeId: number }) => {
     <>
       <div>
         <h1>{store.name}</h1>
-        <pre>{JSON.stringify(store, null, 2)}</pre>
+
+        <h2>Items:</h2>
+        {store.items && store.items.length > 0 ? (
+          <ul>
+            {store.items.map((item, index) => (
+              <li key={index}>{item.name}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No items available in this store.</p>
+        )}
 
         <Link href={`/stores/${store.id}/edit`}>Edit</Link>
 
