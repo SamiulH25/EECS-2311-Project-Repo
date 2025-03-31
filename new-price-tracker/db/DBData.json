@@ -1,367 +1,425 @@
 {
-    "stores": [
+  "stores": [
+    {
+      "name": "Walmart",
+      "items": [
         {
-            "name": "Walmart",
-            "items": [
-                {
-                    "name": "Apple",
-                    "price": 0.99
-                },
-                {
-                    "name": "Dozen Eggs",
-                    "price": 3.93
-                },
-                {
-                    "name": "Single Banana",
-                    "price": 0.3
-                },
-                {
-                    "name": "10 oz Grape Tomatoes",
-                    "price": 3.97
-                },
-                {
-                    "name": "Single Roma Tomato",
-                    "price": 0.62
-                },
-                {
-                    "name": "5 lb of Potatos",
-                    "price": 3.97
-                },
-                {
-                    "name": "Mini Seedless Watermelon",
-                    "price": 3.97
-                },
-                {
-                    "name": "Red Mango",
-                    "price": 1.47
-                },
-                {
-                    "name": "1kg Table Salt",
-                    "price": 1.17
-                },
-                {
-                    "name": "4 Pack Shin Ramen",
-                    "price": 6.97
-                },
-                {
-                    "name": "Whole Chicken",
-                    "price": 17.00
-                },
-                {
-                    "name": "Chicken Legs",
-                    "price": 16.42
-                },
-                {
-                    "name": "Chicken Wings",
-                    "price": 12.85
-                },
-                {
-                    "name": "Chicken Breasts",
-                    "price": 14.00
-                },
-                {
-                    "name": "Flank Steak",
-                    "price": 17.39
-                },
-                {
-                    "name": "Eggplant",
-                    "price": 2.8
-                },
-                {
-                    "name": "Squash, Long",
-                    "price": 4.11
-                },
-                {
-                    "name": "Cauliflower",
-                    "price": 5.97
-                },
-                {
-                    "name": "Wonder White Bread",
-                    "price": 3.27
-                },
-                {
-                    "name": "Wonder Whole Wheat Bread",
-                    "price": 3.27
-                },
-                {
-                    "name": "McCain's Chocolate Cake",
-                    "price": 6.57
-                }
-            ]
-
+          "name": "Apple",
+          "price": 0.99
         },
-
         {
-            "name": "NoFrills",
-            "items": [
-                {
-                    "name": "Apple",
-                    "price": 1.15
-                },
-                {
-                    "name": "Dozen Eggs",
-                    "price": 3.93
-                },
-                {
-                    "name": "Bunch of Banana",
-                    "price": 1.49
-                },
-                {
-                    "name": "10 oz Grape Tomatoes",
-                    "price": 5.99
-                },
-                {
-                    "name": "Single Roma Tomato",
-                    "price": 0.79
-                },
-                {
-                    "name": "10 lb of Potatos",
-                    "price": 4.99
-                },
-                {
-                    "name": "Mini Seedless Watermelon",
-                    "price": 5.99
-                },
-                {
-                    "name": "Red Mango",
-                    "price": 1.29
-                },
-                {
-                    "name": "1kg Table Salt",
-                    "price": 1.49
-                },
-                {
-                    "name": "4 Pack Shin Ramen",
-                    "price": 4.99
-                },
-                {
-                    "name": "Whole Chicken",
-                    "price": 15.00
-                },
-                {
-                    "name": "Chicken Legs",
-                    "price": 20.30
-                },
-                {
-                    "name": "Chicken Wings",
-                    "price": 11.13
-                },
-                {
-                    "name": "Chicken Breasts",
-                    "price": 13.00
-                },
-                {
-                    "name": "Flank Steak",
-                    "price": 19.00
-                },
-                {
-                    "name": "Eggplant",
-                    "price": 1.37
-                },
-                {
-                    "name": "Squash, Long",
-                    "price": 1.79
-                },
-                {
-                    "name": "Cauliflower",
-                    "price": 3.99
-                },
-                {
-                    "name": "Wonder White Bread",
-                    "price": 2.49
-                },
-                {
-                    "name": "Wonder Whole Wheat Bread",
-                    "price": 2.49
-                },
-                {
-                    "name": "McCain's Chocolate Cake",
-                    "price": 7.00
-                }
-            ]
-
+          "name": "Dozen Eggs",
+          "price": 3.93
         },
-
         {
-            "name": "Sobeys",
-            "items": [
-                {
-                    "name": "Apple",
-                    "price": 1.29
-                },
-                {
-                    "name": "Dozen Eggs",
-                    "price": 3.93
-                },
-                {
-                    "name": "Single Banana",
-                    "price": 0.37
-                },
-                {
-                    "name": "10 oz Grape Tomatoes",
-                    "price": 3.99
-                },
-                {
-                    "name": "4 Pack Roma Tomato",
-                    "price": 2.99
-                },
-                {
-                    "name": "5 lb of Potatos",
-                    "price": 3.99
-                },
-                {
-                    "name": "Mini Seedless Watermelon",
-                    "price": 6.99
-                },
-                {
-                    "name": "Red Mango",
-                    "price": 3.00
-                },
-                {
-                    "name": "1kg Table Salt",
-                    "price": 2.29
-                },
-                {
-                    "name": "4 Pack Shin Ramen",
-                    "price": 6.79
-                },
-                {
-                    "name": "Whole Chicken",
-                    "price": 19.25
-                },
-                {
-                    "name": "Chicken Legs",
-                    "price": 10.23
-                },
-                {
-                    "name": "Chicken Wings",
-                    "price": 12.79
-                },
-                {
-                    "name": "Chicken Breasts",
-                    "price": 19.46
-                },
-                {
-                    "name": "Flank Steak",
-                    "price": 33.49
-                },
-                {
-                    "name": "Eggplant",
-                    "price": 3.49
-                },
-                {
-                    "name": "Squash, Long",
-                    "price": 3.49
-                },
-                {
-                    "name": "Cauliflower",
-                    "price": 4.99
-                },
-                {
-                    "name": "Dempsters White Bread",
-                    "price": 2.50
-                },
-                {
-                    "name": "Dempsters Whole Wheat Bread",
-                    "price": 2.50
-                },
-                {
-                    "name": "McCain's Chocolate Cake",
-                    "price": 6.79
-                }
-            ]
+          "name": "Single Banana",
+          "price": 0.3
         },
-
         {
-            "name": "Metro",
-            "items": [
-                {
-                    "name": "Apple",
-                    "price": 1.02
-                },
-                {
-                    "name": "Dozen Eggs",
-                    "price": 3.99
-                },
-                {
-                    "name": "Single Banana",
-                    "price": 0.29
-                },
-                {
-                    "name": "10 oz Grape Tomatoes",
-                    "price": 7.49
-                },
-                {
-                    "name": "Tomato Ketchup",
-                    "price": 6.49
-                },
-                {
-                    "name": "5 lb of Potatos",
-                    "price": 3.99
-                },
-                {
-                    "name": "Mini Seedless Watermelon",
-                    "price": 5.99
-                },
-                {
-                    "name": "Red Mango",
-                    "price": 2.99
-                },
-                {
-                    "name": "1kg Table Salt",
-                    "price": 6.99
-                },
-                {
-                    "name": "4 Pack Shin Ramen",
-                    "price": 9.20
-                },
-                {
-                    "name": "Whole Chicken",
-                    "price": 21.14
-                },
-                {
-                    "name": "Chicken Legs",
-                    "price": 9.9
-                },
-                {
-                    "name": "Chicken Wings",
-                    "price": 15.73
-                },
-                {
-                    "name": "Chicken Breasts",
-                    "price": 23.18
-                },
-                {
-                    "name": "Flank Steak",
-                    "price": 17.73
-                },
-                {
-                    "name": "Eggplant",
-                    "price": 2.30
-                },
-                {
-                    "name": "Squash",
-                    "price": 5.64
-                },
-                {
-                    "name": "Cauliflower",
-                    "price": 4.99
-                },
-                {
-                    "name": "Wonder White Bread",
-                    "price": 4.39
-                },
-                {
-                    "name": "Wonder Whole Wheat Bread",
-                    "price": 4.39
-                },
-                {
-                    "name": "McCain's Chocolate Cake",
-                    "price": 6.99
-                }
-            ]
-
+          "name": "10 oz Grape Tomatoes",
+          "price": 3.97
+        },
+        {
+          "name": "Single Roma Tomato",
+          "price": 0.62
+        },
+        {
+          "name": "5 lb of Potatos",
+          "price": 3.97
+        },
+        {
+          "name": "Mini Seedless Watermelon",
+          "price": 3.97
+        },
+        {
+          "name": "Red Mango",
+          "price": 1.47
+        },
+        {
+          "name": "1kg Table Salt",
+          "price": 1.17
+        },
+        {
+          "name": "4 Pack Shin Ramen",
+          "price": 6.97
+        },
+        {
+          "name": "Whole Chicken",
+          "price": 17.0
+        },
+        {
+          "name": "Chicken Legs",
+          "price": 16.42
+        },
+        {
+          "name": "Chicken Wings",
+          "price": 12.85
+        },
+        {
+          "name": "Chicken Breasts",
+          "price": 14.0
+        },
+        {
+          "name": "Flank Steak",
+          "price": 17.39
+        },
+        {
+          "name": "Eggplant",
+          "price": 2.8
+        },
+        {
+          "name": "Squash, Long",
+          "price": 4.11
+        },
+        {
+          "name": "Cauliflower",
+          "price": 5.97
+        },
+        {
+          "name": "Wonder White Bread",
+          "price": 3.27
+        },
+        {
+          "name": "Wonder Whole Wheat Bread",
+          "price": 3.27
+        },
+        {
+          "name": "McCain's Chocolate Cake",
+          "price": 6.57
         }
+      ]
+    },
 
-    ]
+    {
+      "name": "NoFrills",
+      "items": [
+        {
+          "name": "Apple",
+          "price": 1.15
+        },
+        {
+          "name": "Dozen Eggs",
+          "price": 3.93
+        },
+        {
+          "name": "Bunch of Banana",
+          "price": 1.49
+        },
+        {
+          "name": "10 oz Grape Tomatoes",
+          "price": 5.99
+        },
+        {
+          "name": "Single Roma Tomato",
+          "price": 0.79
+        },
+        {
+          "name": "10 lb of Potatos",
+          "price": 4.99
+        },
+        {
+          "name": "Mini Seedless Watermelon",
+          "price": 5.99
+        },
+        {
+          "name": "Red Mango",
+          "price": 1.29
+        },
+        {
+          "name": "1kg Table Salt",
+          "price": 1.49
+        },
+        {
+          "name": "4 Pack Shin Ramen",
+          "price": 4.99
+        },
+        {
+          "name": "Whole Chicken",
+          "price": 15.0
+        },
+        {
+          "name": "Chicken Legs",
+          "price": 20.3
+        },
+        {
+          "name": "Chicken Wings",
+          "price": 11.13
+        },
+        {
+          "name": "Chicken Breasts",
+          "price": 13.0
+        },
+        {
+          "name": "Flank Steak",
+          "price": 19.0
+        },
+        {
+          "name": "Eggplant",
+          "price": 1.37
+        },
+        {
+          "name": "Squash, Long",
+          "price": 1.79
+        },
+        {
+          "name": "Cauliflower",
+          "price": 3.99
+        },
+        {
+          "name": "Wonder White Bread",
+          "price": 2.49
+        },
+        {
+          "name": "Wonder Whole Wheat Bread",
+          "price": 2.49
+        },
+        {
+          "name": "McCain's Chocolate Cake",
+          "price": 7.0
+        }
+      ]
+    },
+
+    {
+      "name": "Sobeys",
+      "items": [
+        {
+          "name": "Apple",
+          "price": 1.29
+        },
+        {
+          "name": "Dozen Eggs",
+          "price": 3.93
+        },
+        {
+          "name": "Single Banana",
+          "price": 0.37
+        },
+        {
+          "name": "10 oz Grape Tomatoes",
+          "price": 3.99
+        },
+        {
+          "name": "4 Pack Roma Tomato",
+          "price": 2.99
+        },
+        {
+          "name": "5 lb of Potatos",
+          "price": 3.99
+        },
+        {
+          "name": "Mini Seedless Watermelon",
+          "price": 6.99
+        },
+        {
+          "name": "Red Mango",
+          "price": 3.0
+        },
+        {
+          "name": "1kg Table Salt",
+          "price": 2.29
+        },
+        {
+          "name": "4 Pack Shin Ramen",
+          "price": 6.79
+        },
+        {
+          "name": "Whole Chicken",
+          "price": 19.25
+        },
+        {
+          "name": "Chicken Legs",
+          "price": 10.23
+        },
+        {
+          "name": "Chicken Wings",
+          "price": 12.79
+        },
+        {
+          "name": "Chicken Breasts",
+          "price": 19.46
+        },
+        {
+          "name": "Flank Steak",
+          "price": 33.49
+        },
+        {
+          "name": "Eggplant",
+          "price": 3.49
+        },
+        {
+          "name": "Squash, Long",
+          "price": 3.49
+        },
+        {
+          "name": "Cauliflower",
+          "price": 4.99
+        },
+        {
+          "name": "Dempsters White Bread",
+          "price": 2.5
+        },
+        {
+          "name": "Dempsters Whole Wheat Bread",
+          "price": 2.5
+        },
+        {
+          "name": "McCain's Chocolate Cake",
+          "price": 6.79
+        }
+      ]
+    },
+
+    {
+      "name": "Metro",
+      "items": [
+        {
+          "name": "English Cucumber",
+          "price": 1.99
+        },
+        {
+          "name": "Hothouse Red Tomato",
+          "price": 1.1
+        },
+        {
+          "name": "Bartlett Pear",
+          "price": 0.45
+        },
+        {
+          "name": "Fresh Canadian Salmon Fillets, Family Pack",
+          "price": 21.81
+        },
+        {
+          "name": "Medium Cheddar Cheese Slices",
+          "price": 4.44
+        },
+        {
+          "name": "Prosciutto",
+          "price": 2.99
+        },
+        {
+          "name": "Angus Sirloin Tip Roast",
+          "price": 17.61
+        },
+        {
+          "name": "Chicken Leg Quarter",
+          "price": 4.88
+        },
+        {
+          "name": "Frozen Broccoli Florets",
+          "price": 2.99
+        },
+        {
+          "name": "Frozen Pepperoni Thin Crust Pizza, Ristorante",
+          "price": 3.99
+        },
+        {
+          "name": "Strawberries",
+          "price": 2.44
+        },
+        {
+          "name": "Raspberries",
+          "price": 2.99
+        },
+        {
+          "name": "Seedless Green Grapes",
+          "price": 8.8
+        },
+        {
+          "name": "Red Seedless Grapes",
+          "price": 8.8
+        },
+        {
+          "name": "Local Yellow Onions",
+          "price": 1.44
+        },
+        {
+          "name": "Wrapped Broccoli Crown",
+          "price": 2.49
+        },
+        {
+          "name": "Lean Ground Beef, Value Pack",
+          "price": 10.24
+        },
+        {
+          "name": "Thick Marble Cheddar Slices",
+          "price": 4.44
+        },
+        {
+          "name": "Classic Oatmeal Cookies Portion Packs, Dad's",
+          "price": 2.99
+        },
+        {
+          "name": "Magic Masala Flavoured Brown Rice Cake, Crispy Minis",
+          "price": 3.49
+        },
+        {
+          "name": "Frozen Original Waffles, Thick & Fluffy",
+          "price": 3.99
+        },
+        {
+          "name": "Medium Roast Ground Coffee",
+          "price": 11.99
+        },
+        {
+          "name": "BBQ Flavoured Smoked Salmon Chunks",
+          "price": 10.58
+        },
+        {
+          "name": "2% Organic Milk, Fine-Filtered",
+          "price": 5.99
+        },
+        {
+          "name": "Spicy Mexican-Style Rice, Bistro Express",
+          "price": 3
+        },
+        {
+          "name": "Frozen Shrimps and Garlic Lemon Sauce",
+          "price": 7.99
+        },
+        {
+          "name": "Gravy Mix For Turkey",
+          "price": 0.99
+        },
+        {
+          "name": "Rice Pilaf, Bistro Express",
+          "price": 3
+        },
+        {
+          "name": "Parsley Flakes",
+          "price": 4.79
+        },
+        {
+          "name": "Medium Cheddar Cheese Snacks",
+          "price": 4.44
+        }
+      ]
+    },
+    {
+      "name": "Food Basics",
+      "items": [
+        { "name": "Salted Butter", "price": 4.88 },
+        { "name": "English Cucumber", "price": 0.88 },
+        { "name": "Raspberries", "price": 2.98 },
+        { "name": "Frozen Straight Cut Fries, Superfries", "price": 2.88 },
+        { "name": "Cola Flavoured Soft Drink", "price": 3.98 },
+        { "name": "Cola Flavoured Soft Drink", "price": 3.98 },
+        { "name": "Hickory Smoked Classic Cut Bacon", "price": 5.99 },
+        { "name": "Chocolate Sandwich Cookies, The Original", "price": 2 },
+        { "name": "Original Chocolate Chip Cookies", "price": 2 },
+        { "name": "Local Yellow Onions", "price": 0.88 },
+        { "name": "Cauliflower", "price": 3.98 },
+        { "name": "Bag of Avocados", "price": 4.98 },
+        { "name": "Blueberries", "price": 3.98 },
+        { "name": "Thick-Sliced White Bread, Classico", "price": 2.99 },
+        { "name": "Everything Bagels", "price": 3.49 },
+        { "name": "Tortilla Chips, Scoops", "price": 2.0 },
+        { "name": "White Cheddar Popcorn", "price": 2.88 },
+        { "name": "Unsalted Butter", "price": 4.88 },
+        { "name": "7” Flour Tortillas", "price": 3.49 },
+        { "name": "Strawberries", "price": 3.98 },
+        { "name": "Rounds Tortilla Chips, Rounds", "price": 2.0 }
+      ]
+    }
+  ]
 }
