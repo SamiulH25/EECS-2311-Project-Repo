@@ -7,8 +7,9 @@ import { useSearchParams } from "next/navigation"
 import { usePathname } from "next/navigation"
 import { Route } from "next"
 import styles from "../styles/Home.module.css"
+import { useState } from "react"
 
-const ITEMS_PER_PAGE = 100
+const ITEMS_PER_PAGE = 50
 
 export const ItemsList = () => {
   const searchparams = useSearchParams()!
@@ -32,21 +33,54 @@ export const ItemsList = () => {
     router.push((pathname + "?" + params.toString()) as Route)
   }
 
+//SearchBar
+  const [searchItem, setSearchItem] = useState('')
+  const [filteredItems, setFilteredItems] = useState(items)
+  const handleInputChange = (e: { target: { value: any } }) => { 
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm)
+
+    const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    {searchTerm.length > 0 ? setFilteredItems(filteredItems) : setFilteredItems(items)}
+    setFilteredItems(filteredItems);
+  }
+
   return (
     <div >
-      
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <Link href={`/items/${item.id}`}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
+      <input
+        type="text"
+        value={searchItem}
+        onChange={handleInputChange}
+        placeholder='Type to Search'
+        style={{width: "100%", height: "32px"}}
+      />
+
+      {searchItem.length > 0 
+        ? 
+        <ul>
+          {filteredItems.map((item) => (
+            <li key={item.id} style={{margin: "5px"}}>
+              <Link href={`/items/${item.id}`}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+        :
+        <ul>
+          {items.map((item) => (
+            <li key={item.id} style={{margin: "5px"}}>
+              <Link href={`/items/${item.id}`}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+      }
 
       <button disabled={page === 0} onClick={goToPreviousPage}>
         Previous
       </button>
-      <button disabled={!hasMore} onClick={goToNextPage}>
+      <button disabled={!hasMore || (searchItem.length > 0)} onClick={goToNextPage}>
         Next
       </button>
     </div>

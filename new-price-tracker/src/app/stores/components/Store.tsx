@@ -25,7 +25,9 @@ export const Store = ({ storeId }: { storeId: number }) => {
             {store.items && store.items.length > 0 ? (
               <ul>
                 {store.items.map((item, index) => (
-                  <li key={index}>{item.name}</li>
+                  <li key={index}>
+                    <Link href={`/items/${item.id}`}>{item.name}</Link>
+                  </li>
                 ))}
               </ul>
             ) : (

@@ -35,7 +35,9 @@ export const Item = ({ itemId }: { itemId: number }) => {
               <tbody>
                 {itemS.map((item) => (
                   <tr key={item.id}>
-                    <td>{item.store.name}</td>
+                    <td>
+                      <Link href={`/stores/${item.store.id}`}>{item.store.name}</Link>
+                    </td>
                     <td>{item.price}</td>
                   </tr>
                 ))}
@@ -63,6 +65,7 @@ export const Item = ({ itemId }: { itemId: number }) => {
 
         </div>
       </div>
+      <h4>Add It to A List</h4>
     </>
   )
 }
