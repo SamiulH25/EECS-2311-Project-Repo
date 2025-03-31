@@ -1,7 +1,7 @@
 "use client";
 import { useQuery } from "@blitzjs/rpc";
 import getUserProfile from "./queries/getUserProfile";
-import axios from "axios";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css"
 import Image from "next";
