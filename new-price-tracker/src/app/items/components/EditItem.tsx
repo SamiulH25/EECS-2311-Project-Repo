@@ -6,6 +6,7 @@ import { UpdateItemSchema } from "../schemas"
 import { FORM_ERROR, ItemForm } from "./ItemForm"
 import { useMutation, useQuery } from "@blitzjs/rpc"
 import { useRouter } from "next/navigation"
+import styles from "../../styles/Home.module.css"
 
 export const EditItem = ({ itemId }: { itemId: number }) => {
   const [item, { setQueryData }] = useQuery(
@@ -21,35 +22,47 @@ export const EditItem = ({ itemId }: { itemId: number }) => {
   return (
     <>
       <div>
-        <h1>Edit Item {item.id}</h1>
-        <pre>{JSON.stringify(item, null, 2)}</pre>
-        <Suspense fallback={<div>Loading...</div>}>
-          <ItemForm
-            submitText="Update Item"
-            schema={UpdateItemSchema}
-            initialValues={{
-              id: item.id,
-              name: item.name,
-              price: item.price,
-              store: "",
-            }}
-            onSubmit={async (values) => {
-              try {
-                const updated = await updateItemMutation({
-                  ...values,
+
+        <div className={styles.globe} />
+
+        <div className={styles.wrapper}>
+
+          <div className={styles.header}>
+            <h1><strong>Edit</strong> Item {item.id}</h1>
+          </div>
+          
+          <div className={styles.centerList}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <ItemForm
+                submitText="Update Item"
+                schema={UpdateItemSchema}
+                initialValues={{
                   id: item.id,
-                })
-                await setQueryData(updated)
-                router.refresh()
-              } catch (error: any) {
-                console.error(error)
-                return {
-                  [FORM_ERROR]: error.toString(),
-                }
-              }
-            }}
-          />
-        </Suspense>
+                  name: item.name,
+                  price: item.price,
+                  store: "",
+                }}
+                onSubmit={async (values) => {
+                  try {
+                    const updated = await updateItemMutation({
+                      ...values,
+                      id: item.id,
+                    })
+                    await setQueryData(updated)
+                    router.refresh()
+                  } catch (error: any) {
+                    console.error(error)
+                    return {
+                      [FORM_ERROR]: error.toString(),
+                    }
+                  }
+                }}
+              />
+            </Suspense>
+          </div>
+
+        </div>
+
       </div>
     </>
   )
