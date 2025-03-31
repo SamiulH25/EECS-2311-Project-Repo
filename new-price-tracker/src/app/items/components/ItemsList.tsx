@@ -33,7 +33,7 @@ export const ItemsList = () => {
     router.push((pathname + "?" + params.toString()) as Route)
   }
 
-
+//SearchBar
   const [searchItem, setSearchItem] = useState('')
   const [filteredItems, setFilteredItems] = useState(items)
   const handleInputChange = (e: { target: { value: any } }) => { 
@@ -44,6 +44,7 @@ export const ItemsList = () => {
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    {searchTerm.length > 0 ? setFilteredItems(filteredItems) : setFilteredItems(items)}
     setFilteredItems(filteredItems);
   }
 
@@ -53,20 +54,33 @@ export const ItemsList = () => {
         type="text"
         value={searchItem}
         onChange={handleInputChange}
-        placeholder='Type to search'
+        placeholder='Type to Search'
+        style={{width: "100%", height: "32px"}}
       />
-      <ul>
-        {filteredItems.map((item) => (
-          <li key={item.id}>
-            <Link href={`/items/${item.id}`}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
+
+      {searchItem.length > 0 
+        ? 
+        <ul>
+          {filteredItems.map((item) => (
+            <li key={item.id} style={{margin: "5px"}}>
+              <Link href={`/items/${item.id}`}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+        :
+        <ul>
+          {items.map((item) => (
+            <li key={item.id} style={{margin: "5px"}}>
+              <Link href={`/items/${item.id}`}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+      }
 
       <button disabled={page === 0} onClick={goToPreviousPage}>
         Previous
       </button>
-      <button disabled={!hasMore} onClick={goToNextPage}>
+      <button disabled={!hasMore || (searchItem.length > 0)} onClick={goToNextPage}>
         Next
       </button>
     </div>
