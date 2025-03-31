@@ -1,18 +1,18 @@
-Log of Meeting Minutes and Major Descisions
+Log of Meeting Minutes and Major Decisions
 
 Week 1 (Mon: Jan 6)
 - approx. 20 Minutes
 - Communications channel was established
-    - Discord groupchat
+    - Discord group chat
     - 4 of 5 members added
 
 
 Week 2 (Mon: Jan 13)
 - In-Lab meeting minutes: approx. 45
-- Ideas for project were brainstormed
+- Ideas for the project were brainstormed
     - GymBuddy, Price Tracker, Animal Shelter, Expenses Tracker
 - In-Class meeting minutes: approx. 30
-- Best idea was voted on using preferential voting system.
+- The best idea was voted on using a preferential voting system.
     - results: GymBuddy, Price Tracker, Expenses Tracker, Animal Shelter
 - Tuesday: fifth member added to Discord.
     - 5 of 5 members added
@@ -29,7 +29,7 @@ Week 3 (Mon: Jan 20)
 
 
 Week 4 (Mon: Jan 27)
-- After the labtest the whole team was collected and introduced to each other.
+- After the lab test the whole team was collected and introduced to each other.
 - Post-Lab meeting minutes: approx. 25
 - Minor Friday meeting was scheduled
 - Friday: ITR0 Planning document progress was commenced.
@@ -38,7 +38,7 @@ Week 4 (Mon: Jan 27)
 
 Week 5 (Mon: Feb 3)
 - In-Lab meeting minutes: approx. 25
-- Issues with team attendance caused the meetings this week to be very minor.
+- Issues with team attendance caused the meetings this week to be shorter than planned.
 
 
 Week 6 (Mon: Feb 10)
@@ -63,23 +63,33 @@ Week 8 (Mon: Feb 24)
 - In-class meeting minutes: approx. 30 mins
 - Reorganized the GitHub repository before committing and pushing the files based on their assigned user stories' tasks for ITR1.
 
+
 Week 9 (Mon: 3 March)
 - In-Lab meeting minutes: approx. 30 mins
 - In-class meeting minutes: approx. 20 mins
 - Updating, debugging, and finalizing our main tasks before the Deliverable 1 deadline while discussing the progress with the team through Discord communication.
 
+
 Week 10 (Mon: 10 March)
 - In-class meeting minutes: approx. 15 mins
 - Completed the Deliverable 1 demo successfully and discussed the improvements and debugging needed to work on the API and create grocery lists to give organized, accurate prices and grocery store locations.
+
 
 Week 11 (Mon: 17 March)
 - In-class meeting minutes: approx. 20 mins
 - A Friday meeting has been scheduled to plan and work on the Lab 5 Take-home Assignment, which took approximately 3 hours.
 
+
 Week 12 (Mon: 24 March)
 - In-class meeting minutes: approx. 15 mins
 - The team planned to work on refactoring and implementing a few additional features before the final launch of the project, so they can be accessed publicly without the need to install any dependencies.
 - All of which will take place during the weekend.
+
+Week 13 (Mon: 31 March)
+- Final demo and product launch for Iteration 3 and Deliverable 2
+- Now the team is double-checking on any other issues and bugs to fix before the website gets built and deployed for public access before the deadline at 11:59 pm.
+- Ashdika handles revising all the documentation needed for the log and pdf files.
+
 
 Developer Tasks under Assigned User Stories (ITR3):
 
