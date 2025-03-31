@@ -20,7 +20,7 @@ export default resolver.pipe(
     const list = await db.list.create({
       data: {
         name: input.name,
-        user: { connect: { id: user?.id } },
+        user: { connect: { id: user.id } },
         items: { connect: listItems.map((c) => ({ id: c?.id })) || [] },
       },
     })
