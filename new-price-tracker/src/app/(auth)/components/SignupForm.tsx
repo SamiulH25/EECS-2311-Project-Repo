@@ -23,7 +23,8 @@ export const SignupForm = (props: SignupFormProps) => {
           <h1>Create an <strong>Account</strong></h1>
           </div>
 
-          <Form className={styles.centerBox}
+          <Form 
+          className={styles.centerBox}
           submitText="Create Account"
           schema={Signup}
           initialValues={{ email: "", password: "" }}
