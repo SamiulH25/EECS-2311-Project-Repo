@@ -92,7 +92,7 @@ export default function UserProfile() {
 
           {memeUrl && (
             <div className="meme-container">
-              <Image src={memeUrl} alt={`${selectedTag} Meme`} />
+              <img src={memeUrl} alt={`${selectedTag} Meme`} />
             </div>
           )}
         </div>
