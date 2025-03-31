@@ -13,7 +13,7 @@ import getUniqueItems from "../../items/queries/getUniqueItems"
 import { z } from "zod"
 export { FORM_ERROR } from "src/app/components/Form"
 
-const ITEMS_PER_PAGE = 100
+const ITEMS_PER_PAGE = 50
 
 export function ListForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
   const searchparams = useSearchParams()!
@@ -53,11 +53,11 @@ export function ListForm<S extends z.ZodType<any, any>>(props: FormProps<S>) {
           ))}
         </ul>
 
-        <button disabled={page === 0} onClick={goToPreviousPage}>
+        <button type="button" disabled={page === 0} onClick={goToPreviousPage}>
           Previous
         </button>
 
-        <button disabled={!hasMore} onClick={goToNextPage}>
+        <button type="button" disabled={!hasMore} onClick={goToNextPage}>
           Next
         </button>
         <br />

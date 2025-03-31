@@ -30,7 +30,7 @@ export const EditList = ({ listId }: { listId: number }) => {
         <div className={styles.globe} />
         <div className={styles.wrapper}>
           <div className={styles.header}>
-            <h1><strong>Edit</strong> List {list.id}</h1>
+            <h1><strong>Edit</strong> {list.name}</h1>
           </div>
         
           <div className={styles.centerList}>
