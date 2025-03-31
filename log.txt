@@ -184,3 +184,5 @@ Actual Cost (Days): 2
     - Fix any issues that arise post-deployment
 Planned Cost (Days): 3
 Actual Cost (Days): 2
+
+The Architecture Sketch (UML) diagram is still the same as in ITR2, so nothing has changed between the classes.
