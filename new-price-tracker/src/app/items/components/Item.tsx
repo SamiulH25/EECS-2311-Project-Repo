@@ -27,10 +27,8 @@ export const Item = ({ itemId }: { itemId: number }) => {
           <div className={styles.centerIt}>
             <table className={styles.tableMain}>
               <thead>
-                
                 <th>Stores </th>
                 <th>Prices </th>
-                
               </thead>
               <tbody>
                 {itemS.map((item) => (
@@ -43,7 +41,6 @@ export const Item = ({ itemId }: { itemId: number }) => {
                 ))}
               </tbody>
             </table>
-            
           </div>
 
           <div className={styles.buttonContainer}>
@@ -62,10 +59,8 @@ export const Item = ({ itemId }: { itemId: number }) => {
               Delete
             </button>
           </div>
-
         </div>
       </div>
-      <h4>Add It to A List</h4>
     </>
   )
 }

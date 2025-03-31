@@ -16,7 +16,7 @@ export const List = ({ listId }: { listId: number }) => {
   const [list] = useQuery(getList, { id: listId })
 
   const listItems: string[] = []
-  
+
   list.items.forEach((item) => {
     !listItems.includes(item.name) ? listItems.push(item.name) : []
   })
@@ -24,19 +24,19 @@ export const List = ({ listId }: { listId: number }) => {
   const uniqueItemList: Item[] = []
   const [uniqueItems] = useQuery(getUniqueItems, {})
   uniqueItems.items.forEach((item) => {
-    listItems.includes(item.name) ? (uniqueItemList.push(item)) : []
+    listItems.includes(item.name) ? uniqueItemList.push(item) : []
   })
 
   return (
     <>
-    <div className={styles.globe} />
+      <div className={styles.globe} />
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <h1>{list.name}</h1>
         </div>
 
         {/* Below, it just lists all items available */}
-        
+
         <div className={styles.centerBox}>
           <ul>
             {uniqueItemList.map((items) => (

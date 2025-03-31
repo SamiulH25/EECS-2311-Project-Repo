@@ -1,10 +1,11 @@
 import styles from "src/app/styles/Home.module.css"
+import Link from "next/link"
 
-const Button = ( obj:{textin: string;} ) => {
+const Button = (obj: { textin: string }) => {
   return (
-    <button className={styles.button}>
+    <Link href="/login" className={styles.button}>
       {obj.textin}
-    </button>
-  );
-};
-export default Button;
+    </Link>
+  )
+}
+export default Button
