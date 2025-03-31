@@ -6,6 +6,7 @@ import deleteItem from "../mutations/deleteItem"
 import getItem from "../queries/getItem"
 import getStore from "../../stores/queries/getStore"
 import getItemsByName from "../queries/getItemsByName"
+import styles from "../../styles/Home.module.css"
 
 export const Item = ({ itemId }: { itemId: number }) => {
   const router = useRouter()
@@ -17,42 +18,52 @@ export const Item = ({ itemId }: { itemId: number }) => {
   return (
     <>
       <div>
-        <h1>{item.name}</h1>
+        <div className={styles.globe} />
+        <div className={styles.wrapper}>
+          <div className={styles.header}>
+            <h1>{item.name}</h1>
+          </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Stores </th>
-              <th>Prices </th>
-            </tr>
-          </thead>
-          <tbody>
-            {itemS.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <Link href={`/stores/${item.store.id}`}>{item.store.name}</Link>
-                </td>
-                <td>{item.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <br />
+          <div className={styles.centerIt}>
+            <table className={styles.tableMain}>
+              <thead>
+                
+                <th>Stores </th>
+                <th>Prices </th>
+                
+              </thead>
+              <tbody>
+                {itemS.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <Link href={`/stores/${item.store.id}`}>{item.store.name}</Link>
+                    </td>
+                    <td>{item.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            
+          </div>
 
-        <Link href={`/items/${item.id}/edit`}>Edit</Link>
+          <div className={styles.buttonContainer}>
+            <Link href={`/items/${item.id}/edit`}>Edit</Link>
 
-        <button
-          type="button"
-          onClick={async () => {
-            if (window.confirm("This will be deleted")) {
-              await deleteItemMutation({ id: item.id })
-              router.push("/items")
-            }
-          }}
-          style={{ marginLeft: "0.5rem" }}
-        >
-          Delete
-        </button>
+            <button
+              type="button"
+              onClick={async () => {
+                if (window.confirm("This will be deleted")) {
+                  await deleteItemMutation({ id: item.id })
+                  router.push("/items")
+                }
+              }}
+              style={{ marginLeft: "0.5rem" }}
+            >
+              Delete
+            </button>
+          </div>
+
+        </div>
       </div>
       <h4>Add It to A List</h4>
     </>
