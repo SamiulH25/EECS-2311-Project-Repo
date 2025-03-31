@@ -29,7 +29,9 @@ export const Item = ({ itemId }: { itemId: number }) => {
           <tbody>
             {itemS.map((item) => (
               <tr key={item.id}>
-                <td>{item.store.name}</td>
+                <td>
+                  <Link href={`/stores/${item.store.id}`}>{item.store.name}</Link>
+                </td>
                 <td>{item.price}</td>
               </tr>
             ))}

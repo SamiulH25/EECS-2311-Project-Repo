@@ -7,8 +7,9 @@ import { useSearchParams } from "next/navigation"
 import { usePathname } from "next/navigation"
 import { Route } from "next"
 import styles from "../styles/Home.module.css"
+import { useState } from "react"
 
-const ITEMS_PER_PAGE = 100
+const ITEMS_PER_PAGE = 50
 
 export const ItemsList = () => {
   const searchparams = useSearchParams()!
@@ -32,11 +33,30 @@ export const ItemsList = () => {
     router.push((pathname + "?" + params.toString()) as Route)
   }
 
+
+  const [searchItem, setSearchItem] = useState('')
+  const [filteredItems, setFilteredItems] = useState(items)
+  const handleInputChange = (e: { target: { value: any } }) => { 
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm)
+
+    const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredItems(filteredItems);
+  }
+
   return (
     <div >
-      
+      <input
+        type="text"
+        value={searchItem}
+        onChange={handleInputChange}
+        placeholder='Type to search'
+      />
       <ul>
-        {items.map((item) => (
+        {filteredItems.map((item) => (
           <li key={item.id}>
             <Link href={`/items/${item.id}`}>{item.name}</Link>
           </li>
