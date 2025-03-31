@@ -1,5 +1,36 @@
+.tableMain {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableMain th {
+  text-align: center;
+  padding: 3px;
+}
+
+.tableMain tr {
+  text-align: left;
+  padding: 3px;
+}
+
+.tableMain tr:nth-child(odd) {
+  background-color: #f2f8f283;
+}
+
+.tableMain tr:hover {
+  background-color: #f2f8f2;
+}
+
+.centerIt {
+  align-self: center;
+  width: 50vw;
+  border: 1px solid #378d3310;
+  padding: 0 1rem;
+  background: #378d3310;
+  color: #1f745a;
+}
+
 .centerList {
-  
   align-self: center;
   max-width: min(500px, var(--screen-width));
   border: 1px solid #378d3310;
