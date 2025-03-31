@@ -52,10 +52,10 @@ Week 7 (Mon: Feb 17)
 - The team members worked on their assigned Major User stories tasks
      - Ashdika's task was on the user authentication and documentation
      - Anna's task was on the UI development of the website design
-     - Nevan's task was on list functionality and logic of sorting, comparing, and displaying the data
-     - Samiul's task was on stub and real database
+     - Nevan's task was on the list functionality and logic of sorting, comparing, and displaying the data
+     - Samiul's task was on stub and the real database
      - Dilpreet's task was on the components needed to display on the website
-- Friday meeting was scheduled for the team members to give an update on the progress of their tasks and complete their pending tasks.
+- Friday meetings were scheduled for the team members to give an update on the progress of their tasks and complete their pending tasks.
 
 
 Week 8 (Mon: Feb 24)
@@ -70,8 +70,86 @@ Week 9 (Mon: 3 March)
 
 Week 10 (Mon: 10 March)
 - In-class meeting minutes: approx. 15 mins
-- Completed the Deliverable 1 demo successfully and discussed the improvements and debugging needed to work on the API and create grocery lists to give organized, accurate prices, and grocery store locations.
+- Completed the Deliverable 1 demo successfully and discussed the improvements and debugging needed to work on the API and create grocery lists to give organized, accurate prices and grocery store locations.
 
 Week 11 (Mon: 17 March)
 - In-class meeting minutes: approx. 20 mins
-- A Friday meeting has been scheduled to plan and work on Lab 5 Take-home Assignment which took approximately 3 hours.
+- A Friday meeting has been scheduled to plan and work on the Lab 5 Take-home Assignment, which took approximately 3 hours.
+
+Week 12 (Mon: 24 March)
+- In-class meeting minutes: approx. 15 mins
+- The team planned to work on refactoring and implementing a few additional features before the final launch of the project, so they can be accessed publicly without the need to install any dependencies.
+
+Developer Tasks under Assigned User Stories (ITR3):
+
+Samiul Hossain
+1. Allow users to add data to the database manually
+    - Create a form for user input (product name, store, price, etc.)
+    - Validate inputs to prevent incorrect entries
+    - Implement a backend API to store user-added data
+    - Update the database schema to accommodate manual data entries
+
+2. Display available items and prices from stores
+    - Fetch product data from the database
+    - Implement UI to display store inventory with prices
+    - Optimize real-time updates for price changes
+
+3. Recommend the best store based on the user’s list
+    - Implement price comparison logic
+    - Retrieve the user’s list and match it with the store data
+    - Display the recommended store dynamically in the UI
+
+Ashdika Siddiqee
+1. Develop user account creation functionality
+    - Create a registration form with input validation
+    - Encrypt passwords before storing them in the database
+    - Implement error handling for duplicate accounts
+
+2. Implement secure login authentication
+    - Develop a login API with JWT/session authentication
+    - Validate user credentials upon login
+    - Store user session securely
+
+3. Enable personalized list management
+    - Develop UI for creating, updating, and deleting lists
+    - Implement backend logic to store and retrieve lists
+    - Ensure user-specific persistence in the database
+
+Dilpreet Bansi
+1. Display store details, including name and available items
+    - Fetch store details from the database
+    - Create a UI layout for storing information
+
+2. Format store items in a readable bullet-point list
+    - Transform JSON data into structured bullet points
+    - Ensure proper formatting across all store pages
+
+3. Use the map function to dynamically list store items
+    - Implement a dynamic map function to render store inventory
+    - Ensure efficient rendering and performance optimization
+
+Anna Maximova
+1. Improve UI design for a better user experience
+    - Refine UI elements such as buttons and navigation bars
+    - Enhance layout consistency and responsiveness
+
+2. Enhance the appearance of tables and other UI components
+    - Improve table styling for better readability
+    - Ensure proper spacing, alignment, and responsiveness
+
+3. Ensure styling consistency across all pages
+    - Implement a global CSS/stylesheet
+    - Standardize fonts, colors, and component styles
+
+Nevan Naug
+1. Implement a web scraper for automatic price updates
+    - Develop a web scraper to extract pricing from online sources
+    - Automate updates in the database at scheduled intervals
+
+2. Deploy the website for public access
+    - Set up hosting and configure deployment settings
+    - Ensure a smooth and functional deployment process
+
+3. Test and stabilize core functionalities after deployment
+    - Conduct thorough testing on all major features
+    - Fix any issues that arise post-deployment
