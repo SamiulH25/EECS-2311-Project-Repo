@@ -6,6 +6,7 @@ import { UpdateStoreSchema } from "../schemas"
 import { FORM_ERROR, StoreForm } from "./StoreForm"
 import { useMutation, useQuery } from "@blitzjs/rpc"
 import { useRouter } from "next/navigation"
+import styles from "../../styles/Home.module.css"
 
 export const EditStore = ({ storeId }: { storeId: number }) => {
   const [store, { setQueryData }] = useQuery(
@@ -21,31 +22,41 @@ export const EditStore = ({ storeId }: { storeId: number }) => {
   return (
     <>
       <div>
-        <h1>Edit Store {store.id}</h1>
-        <pre>{JSON.stringify(store, null, 2)}</pre>
-        <Suspense fallback={<div>Loading...</div>}>
-          <StoreForm
-            submitText="Update Store"
-            schema={UpdateStoreSchema}
-            initialValues={store}
-            onSubmit={async (values) => {
-              try {
-                const updated = await updateStoreMutation({
-                  ...values,
-                  id: store.id,
-                })
-                //await setQueryData(updated);
-                router.refresh()
-                router.push(`/stores/${store.id}`)
-              } catch (error: any) {
-                console.error(error)
-                return {
-                  [FORM_ERROR]: error.toString(),
-                }
-              }
-            }}
-          />
-        </Suspense>
+        <div className={styles.globe} />
+        <div className={styles.wrapper}>
+
+          <div className={styles.header}>
+            <h1><strong>Edit</strong> Store {store.id}</h1>
+          </div>
+            
+          <div className={styles.centerList}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <StoreForm
+                submitText="Update Store"
+                schema={UpdateStoreSchema}
+                initialValues={store}
+                onSubmit={async (values) => {
+                  try {
+                    const updated = await updateStoreMutation({
+                      ...values,
+                      id: store.id,
+                    })
+                    //await setQueryData(updated);
+                    router.refresh()
+                    router.push(`/stores/${store.id}`)
+                  } catch (error: any) {
+                    console.error(error)
+                    return {
+                      [FORM_ERROR]: error.toString(),
+                    }
+                  }
+                }}
+              />
+            </Suspense>
+          </div>
+
+        </div>
+
       </div>
     </>
   )
