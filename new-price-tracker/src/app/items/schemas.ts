@@ -8,8 +8,7 @@ export const CreateItemSchema = z.object({
     .pipe(z.string().min(2, { message: "This field is required" })),
   price: z.coerce
     .number()
-    .positive({ message: "The price cannot be 0 or a negative number" })
-    .lte(17),
+    .positive({ message: "The price cannot be 0 or a negative number" }),
   store: z.string(),
 })
 export const UpdateItemSchema = CreateItemSchema.merge(
