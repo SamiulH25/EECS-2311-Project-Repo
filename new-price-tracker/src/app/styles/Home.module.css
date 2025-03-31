@@ -23,7 +23,8 @@
 
 .centerIt {
   align-self: center;
-  width: 50vw;
+  max-width: var(--screen-width);
+  min-width: 50vw;
   border: 1px solid #378d3310;
   padding: 0 1rem;
   background: #378d3310;

@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@blitzjs/rpc"
 import getUniqueStores from "../../stores/queries/getUniqueStores"
 import {Store} from "@/src/app/stores/components/Store";
 import {CompareLists} from "@/src/app/lists/components/CompareLists";
+import styles from "../../styles/Home.module.css"
 
 export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   const [stores] = useQuery(getUniqueStores, {})
@@ -44,35 +45,35 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
 
   return (
     <>
-      <table style={{ width: "100vh", textAlign: "center" }}>
-        <thead>
-          <tr>
+      <div>
+        <table className={styles.tableMain}>
+          <thead>
             {stores.map((store) => (
               <th key={store.id}>{store.name}</th>
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {stores.map((store) => (
-              <td key={store.id}>
-                {store.items.map((item) =>
-                  listItems.includes(item.name) ? (
-                    <ul key={item.id}>
-                      {item.name}: {item.price}
-                    </ul>
-                  ) : (
-                    []
-                  )
-                )}
-                <strong>Total: {priceTotal.get(store.id)}</strong>
-              </td>
-            ))}
-          </tr>
-        </tbody>
-      </table>
-      <br/>
-        <h3>{compareResults.get("bestStoreName")} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(compareResults.get("bestStoreId"))} from your list</h3>
+          </thead>
+          <tbody>
+            <tr>
+              {stores.map((store) => (
+                <td key={store.id}>
+                  {store.items.map((item) =>
+                    listItems.includes(item.name) ? (
+                      <ul key={item.id}>
+                        {item.name}: {item.price}
+                      </ul>
+                    ) : (
+                      []
+                    )
+                  )}
+                  <strong>Total: {priceTotal.get(store.id)}</strong>
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+        <br/>
+          <h3>{compareResults.get("bestStoreName")} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(compareResults.get("bestStoreId"))} from your list</h3>
+      </div>
     </>
   )
 }

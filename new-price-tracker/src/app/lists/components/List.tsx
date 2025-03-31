@@ -8,6 +8,7 @@ import getUniqueStores from "../../stores/queries/getUniqueStores"
 import { DisplayTable } from "./DisplayTable"
 import { Item } from "db"
 import getUniqueItems from "../../items/queries/getUniqueItems"
+import styles from "../../styles/Home.module.css"
 
 export const List = ({ listId }: { listId: number }) => {
   const router = useRouter()
@@ -28,35 +29,44 @@ export const List = ({ listId }: { listId: number }) => {
 
   return (
     <>
-      <div>
-        <h1>{list.name}</h1>
+    <div className={styles.globe} />
+      <div className={styles.wrapper}>
+        <div className={styles.header}>
+          <h1>{list.name}</h1>
+        </div>
 
         {/* Below, it just lists all items available */}
-        <ul>
-          {uniqueItemList.map((items) => (
-            <li key={items.id}>
-              <Link href={`/items/${items.id}`}>{items.name}</Link>
-            </li>
-          ))}
-        </ul>
+        
+        <div className={styles.centerBox}>
+          <ul>
+            {uniqueItemList.map((items) => (
+              <li key={items.id}>
+                <Link href={`/items/${items.id}`}>{items.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <DisplayTable listItems={listItems} />
-        <br />
+        <div className={styles.centerIt}>
+          <DisplayTable listItems={listItems} />
+        </div>
 
-        <Link href={`/lists/${list.id}/edit`}>Edit</Link>
+        <div className={styles.buttonContainer}>
+          <Link href={`/lists/${list.id}/edit`}>Edit</Link>
 
-        <button
-          type="button"
-          onClick={async () => {
-            if (window.confirm("This will be deleted")) {
-              await deleteListMutation({ id: list.id })
-              router.push("/lists")
-            }
-          }}
-          style={{ marginLeft: "0.5rem" }}
-        >
-          Delete
-        </button>
+          <button
+            type="button"
+            onClick={async () => {
+              if (window.confirm("This will be deleted")) {
+                await deleteListMutation({ id: list.id })
+                router.push("/lists")
+              }
+            }}
+            style={{ marginLeft: "0.5rem" }}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     </>
   )
