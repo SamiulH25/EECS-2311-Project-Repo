@@ -2,6 +2,8 @@
 
 Welcome to Team 2's Project! The Price is Right is a web app created to help consumers find the best prices for their grocery list.
 
+## Run Through Link
+
 ## Run Locally
 
 Clone the project
