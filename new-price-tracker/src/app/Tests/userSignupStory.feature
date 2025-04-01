@@ -3,7 +3,7 @@ Feature: User Signup Story
   Given I am on the signup page
   When I enter valid credentials
   And I click the signup button
-  Then Ishould be logged in successfully
+  Then I should be logged in successfully
   And I should be redirected to the home page
 
   Scenario: User signs up with taken credentials
@@ -12,7 +12,7 @@ Feature: User Signup Story
   And I click the signup button
   Then I should see an error message
 
-  Scenario: User signs up with short password
+  Scenario: User signs up with a short password
   Given I am on the signup page
   When I enter short password
   And I click the signup button
