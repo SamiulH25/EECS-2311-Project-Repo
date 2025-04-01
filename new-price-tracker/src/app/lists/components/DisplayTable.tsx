@@ -20,6 +20,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
     listItems.includes(item.name) ? itemList.push(item) : []
   })
 
+
   let numOfItems = listItems.length
   let numOfStores = stores.length
   let priceTotal = new Map()
@@ -34,7 +35,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
     priceTotal.set(store.name, 0)
   })
   //Iterates through the array of items
-  for (let item1 of listItems) {
+  itemList.forEach((item1) => {
     //total is used for avg calculation
     let total = 0
     let num = 0
@@ -43,7 +44,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
     let best = ""
     stores.forEach((store) => {
       store.items.forEach((item) => {
-        if (item.name == item1) {
+        if (item.name == item1.name) {
           if (low == 0) {
             low = item.price
             best = store.name
@@ -66,16 +67,18 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
       }
       a = false
     })
-    prices2.set(item1, prices)
+    prices2.set(item1.id, prices)
     prices = []
-    avg.set(item1, total / num)
-    lowest.set(item1, low)
+    avg.set(item1.id, total / num)
+    lowest.set(item1.id, low)
     let temp = []
     temp.push(best)
-    beststore.set(item1, temp)
+    beststore.set(item1.id, temp)
     temp = stores2.get(best) + 1
     stores2.set(best, temp)
-  }
+  })
+
+
 
   let temp = 0
   let best = ""
@@ -98,22 +101,25 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
       <div>
         <table className={styles.tableMain}>
           <thead>
+          <tr>
             {<th>Items</th>}
             {stores.map((store) => (
               <th key={store.name}>{store.name}</th>
             ))}
             {<th>Best Store</th>}
             {<th>Avg Price</th>}
+          </tr>
           </thead>
           <tbody>
-            {listItems.map((item) => (
-              <tr key={item}>
-                <td>{item}</td>
+            {itemList.map((item) => (
+              <tr key={item.id}>
+                <td>{item.name}</td>
                 {stores.map((store) => (
-                  <td key={item}>{prices2.get(item)[i++].toFixed(2)}</td>
+                  <td key={store.id}>
+                    {prices2.get(item.id)[i++] == 0 ? <p>N/A</p> : <p>{prices2.get(item.id)[i - 1]}</p>}</td>
                 ))}
-                {beststore.get(item)[(i = 0)]}
-                {<td>{avg.get(item).toFixed(2)}</td>}
+                <td>{beststore.get(item.id)[(i = 0)]}</td>
+                {<td>{avg.get(item.id).toFixed(2)}</td>}
               </tr>
             ))}
             <tr>
