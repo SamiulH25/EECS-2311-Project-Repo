@@ -35,7 +35,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
     priceTotal.set(store.name, 0)
   })
   //Iterates through the array of items
-  itemList.forEach((item1) => {
+  for (let item1 of listItems) {
     //total is used for avg calculation
     let total = 0
     let num = 0
@@ -44,7 +44,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
     let best = ""
     stores.forEach((store) => {
       store.items.forEach((item) => {
-        if (item.name == item1.name) {
+        if (item.name == item1) {
           if (low == 0) {
             low = item.price
             best = store.name
@@ -67,16 +67,16 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
       }
       a = false
     })
-    prices2.set(item1.id, prices)
+    prices2.set(item1, prices)
     prices = []
-    avg.set(item1.id, total / num)
-    lowest.set(item1.id, low)
+    avg.set(item1, total / num)
+    lowest.set(item1, low)
     let temp = []
     temp.push(best)
-    beststore.set(item1.id, temp)
+    beststore.set(item1, temp)
     temp = stores2.get(best) + 1
     stores2.set(best, temp)
-  })
+  }
 
 
 
@@ -111,15 +111,15 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
           </tr>
           </thead>
           <tbody>
-            {itemList.map((item) => (
-              <tr key={item.id}>
-                <td>{item.name}</td>
+            {listItems.map((item) => (
+              <tr key={item}>
+                <td>{item}</td>
                 {stores.map((store) => (
                   <td key={store.id}>
-                    {prices2.get(item.id)[i++] == 0 ? <p>N/A</p> : prices2.get(item.id)[i-1] === lowest.get(item.id) ? <strong>{prices2.get(item.id)[i - 1]}</strong> : <p>{prices2.get(item.id)[i - 1]}</p>}</td>
+                    {prices2.get(item)[i++] == 0 ? <p>N/A</p> : prices2.get(item)[i-1] === lowest.get(item) ? <strong>{prices2.get(item)[i - 1]}</strong> : <p>{prices2.get(item)[i - 1]}</p>}</td>
                 ))}
-                <td>{beststore.get(item.id)[(i = 0)]}</td>
-                {<td>{avg.get(item.id).toFixed(2)}</td>}
+                <td>{beststore.get(item)[(i = 0)]}</td>
+                {<td>{avg.get(item).toFixed(2)}</td>}
               </tr>
             ))}
             <tr>
