@@ -22,15 +22,15 @@ export const EditItem = ({ itemId }: { itemId: number }) => {
   return (
     <>
       <div>
-
         <div className={styles.globe} />
 
         <div className={styles.wrapper}>
-
           <div className={styles.header}>
-            <h1><strong>Edit</strong> Item {item.id}</h1>
+            <h1>
+              <strong>Edit</strong> Item {item.id}
+            </h1>
           </div>
-          
+
           <div className={styles.centerList}>
             <Suspense fallback={<div>Loading...</div>}>
               <ItemForm
@@ -40,7 +40,7 @@ export const EditItem = ({ itemId }: { itemId: number }) => {
                   id: item.id,
                   name: item.name,
                   price: item.price,
-                  store: "",
+                  store: "Walmart",
                 }}
                 onSubmit={async (values) => {
                   try {
@@ -50,6 +50,7 @@ export const EditItem = ({ itemId }: { itemId: number }) => {
                     })
                     await setQueryData(updated)
                     router.refresh()
+                    router.push(`/items/${item.id}`)
                   } catch (error: any) {
                     console.error(error)
                     return {
@@ -60,9 +61,7 @@ export const EditItem = ({ itemId }: { itemId: number }) => {
               />
             </Suspense>
           </div>
-
         </div>
-
       </div>
     </>
   )

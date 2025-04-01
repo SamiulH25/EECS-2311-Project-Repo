@@ -116,7 +116,7 @@ export const DisplayTable = ({ listItems }: { listItems: string[] }) => {
                 <td>{item.name}</td>
                 {stores.map((store) => (
                   <td key={store.id}>
-                    {prices2.get(item.id)[i++] == 0 ? <p>N/A</p> : prices2.get(item.id)[i-1] === lowest.get(item.id) ? <strong>{prices2.get(item.id)[i - 1]}</strong> : <p>{prices2.get(item.id)[i - 1]}</p>}</td>
+                    {prices2.get(item.id)[i++] == 0 ? <p>N/A</p> : <p>{prices2.get(item.id)[i - 1]}</p>}</td>
                 ))}
                 <td>{beststore.get(item.id)[(i = 0)]}</td>
                 {<td>{avg.get(item.id).toFixed(2)}</td>}
