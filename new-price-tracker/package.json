@@ -26,12 +26,12 @@
     ]
   },
   "dependencies": {
-    "@blitzjs/auth": "2.2.1",
-    "@blitzjs/next": "2.2.1",
-    "@blitzjs/rpc": "2.2.1",
+    "@blitzjs/auth": "2.2.2",
+    "@blitzjs/next": "2.2.2",
+    "@blitzjs/rpc": "2.2.2",
     "@prisma/client": "5.4.2",
     "axios": "1.8.4",
-    "blitz": "2.2.1",
+    "blitz": "2.2.2",
     "formik": "2.4.6",
     "next": "15.0.1",
     "prisma": "5.4.2",

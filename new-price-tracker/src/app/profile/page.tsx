@@ -1,9 +1,10 @@
 "use client";
 import { useQuery } from "@blitzjs/rpc";
 import getUserProfile from "./queries/getUserProfile";
-import axios from "axios";
+import axios from 'axios';
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css"
+import Image from "next";
 
 const MEME_API_KEY = "vzH4535Rx7QR2yRjm7d0oE7fLG0fmL4y";
 
