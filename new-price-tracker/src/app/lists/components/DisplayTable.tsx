@@ -4,75 +4,132 @@ import getUniqueStores from "../../stores/queries/getUniqueStores"
 import {Store} from "@/src/app/stores/components/Store";
 import {CompareLists} from "@/src/app/lists/components/CompareLists";
 import styles from "../../styles/Home.module.css"
+import {store} from "next/dist/build/output/store";
 
 export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   const [stores] = useQuery(getUniqueStores, {})
+  let numOfItems = listItems.length;
+  let numOfStores = stores.length;
+  let priceTotal = new Map();
+  let prices : number[] = [];
+  let prices2 = new Map();
+  let beststore = new Map();
+  let stores2 = new Map();
+  let avg = new Map();
+  let lowest = new Map();
+  stores.forEach((store) => {
+    stores2.set(store.name, 0);
+    priceTotal.set(store.name, 0);
+  })
+  //Iterates through the array of items
+  for (let item1 of listItems) {
+    //total is used for avg calculation
+    let total = 0;
+    let num = 0;
+    let a = false;
+    let low = 0;
+    let best = "";
+    stores.forEach((store) => {
+      store.items.forEach((item) => {
+        if (item.name == item1) {
+          if(low == 0){
+            low = item.price;
+            best = store.name;
+          }
+          else{
+            if(low > item.price){
+              low = item.price;
+              best = store.name;
+            }
+          }
+          let j = priceTotal.get(store.name)
+          priceTotal.set(store.name, j += item.price);
+          total += item.price;
+          num++
+          prices.push(item.price);
+          a = true;
+        }
+      })
+      if(!a){
+        prices.push(0);
+      }
+      a = false;
+    })
+    prices2.set(item1, prices);
+    prices = [];
+    avg.set(item1, total/num)
+    lowest.set(item1, low)
+    let temp = []
+    temp.push(best);
+    beststore.set(item1, temp)
+    temp = stores2.get(best);
+    stores2.set(best, temp++);
+  }
 
-  let numOfItems = listItems.length
-  let priceTotal = new Map()
-  //this stores the amount of items available in any store.
-  let itemTotal = new Map()
-  let missingItems = new Map()
+  let temp = 0;
+  let best = "";
 
   stores.forEach((store) => {
-    let pTotal = 0
-    let iTotal = 0;
-    let mItem = listItems
-    priceTotal.set(store.id, 0)
-    itemTotal.set(store.id, 0)
-    missingItems.set(store.id, mItem.toString())
-    store.items.forEach((item) => {
-      listItems.includes(item.name) ? (pTotal += item.price) : [];
-      listItems.includes(item.name) ? (iTotal++) : [];
-      listItems.includes(item.name) ? (mItem = mItem.filter((it) => (it != item.name))) : [];
-    })
-    priceTotal.set(store.id, pTotal.toFixed(2))
-    itemTotal.set(store.id, iTotal)
-    if (mItem.length == 0) {
-      missingItems.set(store.id, "nothing")
+    if(temp == 0){
+      temp = stores2.get(store);
+      best = store.name;
     }
-    else {
-      missingItems.set(store.id, mItem.toString())
+    else{
+      if(temp < stores2.get(store)) {
+        temp = stores2.get(store);
+        best = store.name;
+      }
     }
-
   })
-  const list: string[] = listItems
-  //constains the name and id of the best store as a map
-  //use "bestStoreId" and "bestStoreName" to access the data
-  let compareResults = new Map()
-  //calls CompareLists which does everything that was refactored
-  compareResults = CompareLists(list,priceTotal,itemTotal,missingItems);
 
+  let i = 0;
   return (
     <>
       <div>
         <table className={styles.tableMain}>
           <thead>
+            {<th>Items</th>}
             {stores.map((store) => (
-              <th key={store.id}>{store.name}</th>
+              <th key={store.name}>{store.name}</th>
             ))}
+            {<th>Best Store</th>}
+            {<th>Avg Price</th>}
           </thead>
           <tbody>
-            <tr>
-              {stores.map((store) => (
-                <td key={store.id}>
-                  {store.items.map((item) =>
-                    listItems.includes(item.name) ? (
-                      <ul key={item.id}>
-                        {item.name}: {item.price}
-                      </ul>
-                    ) : (
-                      []
-                    )
-                  )}
-                  <strong>Total: {priceTotal.get(store.id)}</strong>
-                </td>
-              ))}
-            </tr>
+          {listItems.map((item) => (
+              <tr key={item}>
+                <td>{item}</td>
+                {
+                  stores.map((store) => (
+                      <td key={item}>
+                        {
+                          (prices2.get(item))[i++]
+
+                        }
+                      </td>
+                  ))
+                }
+                {
+                  (beststore.get(item))[i=0]
+                }
+                {<td>{avg.get(item)}</td>}
+              </tr>
+          ))}
+          <tr>
+            <td>Price Total</td>
+          {stores.map((store) => (
+              <td key={store.name}>
+                {
+                  priceTotal.get(store.name)
+                }
+              </td>
+              )
+          )}
+          </tr>
           </tbody>
         </table>
+        <h2>The best store to shop from is {best} due to it have the lowest price on the most items</h2>
         <br/>
-          <h3>{compareResults.get("bestStoreName")} has most of your items and offers the best bang for your buck! It is missing {missingItems.get(compareResults.get("bestStoreId"))} from your list</h3>
       </div>
     </>
   )
