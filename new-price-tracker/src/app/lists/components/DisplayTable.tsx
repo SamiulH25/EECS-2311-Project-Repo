@@ -18,7 +18,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
   let avg = new Map();
   let lowest = new Map();
   stores.forEach((store) => {
-    stores2.set(store.name, 0);
+    stores2.set(store.name, 1);
     priceTotal.set(store.name, 0);
   })
   //Iterates through the array of items
@@ -62,8 +62,8 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
     let temp = []
     temp.push(best);
     beststore.set(item1, temp)
-    temp = stores2.get(best);
-    stores2.set(best, temp++);
+    temp = stores2.get(best) + 1;
+    stores2.set(best, temp);
   }
 
   let temp = 0;
@@ -71,12 +71,12 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
 
   stores.forEach((store) => {
     if(temp == 0){
-      temp = stores2.get(store);
+      temp = stores2.get(store.name);
       best = store.name;
     }
     else{
-      if(temp < stores2.get(store)) {
-        temp = stores2.get(store);
+      if(temp < stores2.get(store.name)) {
+        temp = stores2.get(store.name);
         best = store.name;
       }
     }
@@ -103,6 +103,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
                   stores.map((store) => (
                       <td key={item}>
                         {
+
                           (prices2.get(item))[i++].toFixed(2)
 
                         }
