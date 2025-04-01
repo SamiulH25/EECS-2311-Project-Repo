@@ -6,10 +6,10 @@ export const CreateItemSchema = z.object({
     .string()
     .trim()
     .pipe(z.string().min(2, { message: "This field is required" })),
-  price: z.coerce
-    .number()
-    .positive({ message: "The price cannot be 0 or a negative number" }),
-  store: z.string(),
+  price: z.coerce.number().positive({ message: "The price cannot be 0 or a negative number" }),
+  store: z.enum(["Walmart", "NoFrills", "Sobeys", "Metro", "Food Basics"], {
+    message: "It must be one of: 'Walmart', 'NoFrills', 'Sobeys', 'Metro', 'Food Basics'",
+  }),
 })
 export const UpdateItemSchema = CreateItemSchema.merge(
   z.object({

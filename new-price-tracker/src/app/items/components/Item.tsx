@@ -15,6 +15,21 @@ export const Item = ({ itemId }: { itemId: number }) => {
 
   const [itemS] = useQuery(getItemsByName, { name: item.name })
 
+  let lPrice = 0
+  let lStore = ""
+
+  itemS.forEach((item) => {
+    if (lPrice == 0) {
+      lPrice = item.price
+      lStore = item.store.name
+    } else {
+      if (lPrice > item.price) {
+        lPrice = item.price
+        lStore = item.store.name
+      }
+    }
+  })
+
   return (
     <>
       <div>
@@ -22,6 +37,9 @@ export const Item = ({ itemId }: { itemId: number }) => {
         <div className={styles.wrapper}>
           <div className={styles.header}>
             <h1>{item.name}</h1>
+            <h3>
+              The Cheapest Store you can find it at is: {lStore} for ${lPrice.toFixed(2)}
+            </h3>
           </div>
 
           <div className={styles.centerIt}>
@@ -34,9 +52,15 @@ export const Item = ({ itemId }: { itemId: number }) => {
                 {itemS.map((item) => (
                   <tr key={item.id}>
                     <td>
-                      <Link href={`/stores/${item.store.id}`}>{item.store.name}</Link>
+                      <Link href={`/stores/${item.store.id}`}>
+                        {item.store.name === lStore ? (
+                          <strong>{item.store.name}</strong>
+                        ) : (
+                          item.store.name
+                        )}
+                      </Link>
                     </td>
-                    <td>{item.price}</td>
+                    <td>{item.price === lPrice ? <strong>{item.price}</strong> : item.price}</td>
                   </tr>
                 ))}
               </tbody>
