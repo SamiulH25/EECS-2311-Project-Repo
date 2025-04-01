@@ -103,7 +103,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
                   stores.map((store) => (
                       <td key={item}>
                         {
-                          (prices2.get(item))[i++]
+                          (prices2.get(item))[i++].toFixed(2)
 
                         }
                       </td>
@@ -112,7 +112,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
                 {
                   (beststore.get(item))[i=0]
                 }
-                {<td>{avg.get(item)}</td>}
+                {<td>{avg.get(item).toFixed(2)}</td>}
               </tr>
           ))}
           <tr>
@@ -120,7 +120,7 @@ export const DisplayTable= ({ listItems }: { listItems: string[] }) => {
           {stores.map((store) => (
               <td key={store.name}>
                 {
-                  priceTotal.get(store.name)
+                  priceTotal.get(store.name).toFixed(2)
                 }
               </td>
               )
