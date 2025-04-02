@@ -176,11 +176,11 @@ To run tests, run the following command
 
 ## Troubleshooting
 
-P: The link is not working or the website is showing error 404.
-A: If the link does not work it is likely the website host is having errors or the website is currently offline. In this case it is reccomended to run the website locally using the steps indicated under run locally.
+- P: The link is not working or the website is showing error 404.
+- A: If the link does not work it is likely the website host is having errors or the website is currently offline. In this case it is reccomended to run the website locally using the steps indicated under run locally.
 
-P: I am getting errors when running npm -install.
-A: These are ghost errors and do not negatively effect the function of the program.
+- P: I am getting errors when running npm -install.
+- A: These are ghost errors and do not negatively effect the function of the program.
 
 ## Authors
 
