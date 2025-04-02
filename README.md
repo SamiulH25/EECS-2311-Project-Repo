@@ -4,9 +4,10 @@ Welcome to Team 2's Project! The Price is Right is a web app created to help con
 
 ## Run Through Link
 
-```bash
+Access the website through the link:
+
 https://thepriceisright-271225738013.us-central1.run.app/
-```
+
 
 ## Run Locally
 
@@ -173,12 +174,6 @@ To run tests, run the following command
   blitz test
 ```
 
-## To Do
-
-- Scrub websites of major grocery stores for data
-- Add ability to track prices over time
-- Estimate profit margins
-- Etc.
 
 ## Authors
 
