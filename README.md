@@ -4,6 +4,10 @@ Welcome to Team 2's Project! The Price is Right is a web app created to help con
 
 ## Run Through Link
 
+```bash
+https://thepriceisright-271225738013.us-central1.run.app/
+```
+
 ## Run Locally
 
 Clone the project
