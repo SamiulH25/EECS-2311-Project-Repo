@@ -59,7 +59,7 @@ export const List = ({ listId }: { listId: number }) => {
             onClick={async () => {
               if (window.confirm("This will be deleted")) {
                 await deleteListMutation({ id: list.id })
-                router.push("/lists")
+                router.push("/lists/new")
               }
             }}
             style={{ marginLeft: "0.5rem" }}

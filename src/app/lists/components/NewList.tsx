@@ -13,14 +13,16 @@ export function New__List() {
     <ListForm
       submitText="Create List"
       schema={CreateListSchema}
+      initialValues={{name:""}}
       onSubmit={async (values) => {
         try {
           const list = await createListMutation(values)
+          router.refresh()
           router.push(`/lists/${list.id}`)
         } catch (error: any) {
           console.error(error)
           return {
-            [FORM_ERROR]: error.toString(),
+            [FORM_ERROR]: "Please enter a name for the list",
           }
         }
       }}

@@ -6,7 +6,7 @@ import Navigation from "./components/Navigation/navbar";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: { title: "Price Tracker", template: "%s – Blitz" },
+  title: { title: "The Price is Right", template: "%s – The Price is Right" },
   description: "Your One-Stop Shop to Cop Items at Dropped Prices ",
 }
 
@@ -16,7 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <BlitzProvider>
         <Navigation />
-          <>{children}</>
+          <>
+          {children}
+          </>
         </BlitzProvider>
       </body>
     </html>
