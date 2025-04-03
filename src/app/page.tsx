@@ -24,7 +24,7 @@ export default async function Home() {
               <div className={styles.buttonContainer}>
                 {currentUser ? (
                   <>
-                    <LogoutButton />
+                    <LogoutButton textin="Logout" />
                     <div>
                       User id: <code>{currentUser.id}</code>
                       <br />

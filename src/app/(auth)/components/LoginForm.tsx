@@ -15,6 +15,10 @@ type LoginFormProps = {
   onSuccess?: (user: PromiseReturnType<typeof login>) => void
 }
 
+function refreshPage() {
+  window.location.reload();
+}
+
 export const LoginForm = (props: LoginFormProps) => {
   const [loginMutation] = useMutation(login)
   const router = useRouter()
@@ -41,6 +45,7 @@ export const LoginForm = (props: LoginFormProps) => {
                 } else {
                   router.push("/")
                 }
+                refreshPage() 
               } catch (error: any) {
                 if (error instanceof AuthenticationError) {
                   return { [FORM_ERROR]: "Sorry, those credentials are invalid" }

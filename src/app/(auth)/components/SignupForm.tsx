@@ -11,6 +11,10 @@ type SignupFormProps = {
   onSuccess?: () => void
 }
 
+function refreshPage() {
+  window.location.reload();
+}
+
 export const SignupForm = (props: SignupFormProps) => {
   const [signupMutation] = useMutation(signup)
   const router = useRouter()
@@ -33,6 +37,7 @@ export const SignupForm = (props: SignupFormProps) => {
             await signupMutation(values)
             router.refresh()
             router.push("/")
+            refreshPage()
           } catch (error: any) {
             if (error.code === "P2002" && error.meta?.target?.includes("email")) {
               // This error comes from Prisma
