@@ -182,6 +182,14 @@ To run tests, run the following command
 - P: I am getting errors when running npm -install.
 - A: These are ghost errors and do not negatively effect the function of the program.
 
+## Improvements Over Deliverable 1
+- A great deal of work has gone into the optimization of the program turning pages that would originally take a couple of seconds to load into feeling instant.
+- The comparison feature has been added where the prices are compared and the best store is recommended, this feature is viewable in the item page and the list page.
+- After recieving feedback from the professor large changes were made to the final product. The list display was changed to feature each item as an individual row and the comparison now occurs over each item rather than total price. The table also highlights the best price and store while also showcasing the average price. The item page for each item now also highlights the best store and its price. A search function was added to make searching for products easier, and many parts of the code have been refactored and optimized to take even larger amounts of data in the future.
+- A user profile page has been added so the user can view their email and role.
+- The website is fully functional and runs using a link rather than locally running the program. Furthermore this website is accessible from anywhere and on any device.
+
+
 ## Authors
 
 - [@Nevan](https://github.com/naug-nevan-216527657)
